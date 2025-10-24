@@ -1312,7 +1312,7 @@ body.light--version .wrap__left {
           align-items: center;
 }
 .head__logo-icon {
-  width: 5em;
+  width: 4em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
