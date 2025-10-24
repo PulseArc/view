@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: #000 url(../img/222.png) no-repeat 50% 50%;
+  background: #000 url(../img/welcome.png) no-repeat 50% 50%;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #242424;
+  background-color: #000000;
   z-index: 200;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1312,7 +1312,7 @@ body.light--version .wrap__left {
           align-items: center;
 }
 .head__logo-icon {
-  width: 9em;
+  width: 5em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -2615,14 +2615,15 @@ body.settings--open .settings__layer {
 .items-line__more {
   margin-left: 2em;
   padding: 0.4em 1em;
-  background: rgba(219, 219, 219, 0.3);
+  background-color: #fff;
+  color: #000;
   -webkit-border-radius: 2em;
      -moz-border-radius: 2em;
           border-radius: 2em;
 }
 .items-line__more.focus {
-  background-color: #fff;
-  color: #000;
+  background-color: #3f3f3f;
+  color: #ffffff;
 }
 .items-line + .items-line {
   margin-top: 3em;
@@ -2648,7 +2649,7 @@ body.settings--open .settings__layer {
   top: 0.2em;
   right: 84%;
   font-size: 16em;
-  color: #820808;
+  color: #090909;
   font-weight: 900;
   -webkit-text-stroke: 0.01em #ffffff;
   z-index: -1;
