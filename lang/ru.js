@@ -777,8 +777,8 @@ export default {
     menu_multtv: 'Мультсериалы',
     menu_feed: 'Лента',
 
-    lampa_movie_title: 'Ламповое кино',
-    lampa_movie_descr: 'Следите за новинками на своем смартфоне. <br>Телеграм: <b>@lampa_movie</b>',
+    lampa_movie_title: 'Cinematic Now',
+    lampa_movie_descr: 'Кино, о котором сейчас говорят. <br>Instagram: <b>@online.cinematic</b>',
 
     plugins_catalog_work: 'Рабочие плагины',
     plugins_catalog_work_descr: 'Плагины, которые точно работают в лампе.',

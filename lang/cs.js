@@ -771,8 +771,8 @@ export default {
     menu_multtv: "Animované seriály",
     menu_feed: "Kanál",
 
-    lampa_movie_title: "Lampa film",
-    lampa_movie_descr: "Sledujte novinky na svém smartphonu. <br>Telegram: <b>@lampa_movie</b>",
+    lampa_movie_title: "Cinematic Now",
+    lampa_movie_descr: "Filmy, o kterých se teď mluví. <br>Instagram: <b>@online.cinematic</b>",
 
     plugins_catalog_work: "Funkční pluginy",
     plugins_catalog_work_descr: "Pluginy, které určitě fungují v lampě.",

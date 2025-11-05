@@ -675,8 +675,8 @@ export default {
     menu_multmovie: 'Мультфільмы',
     menu_multtv: 'Мультсерыялы',
     menu_feed: 'Стужка',
-    lampa_movie_title: 'Лямпавае кіно',
-    lampa_movie_descr: 'Сачыце за навінкамі на сваім смартфоне. <br>Тэлеграм: <b>@lampa_movie</b>',
+    lampa_movie_title: 'Cinematic Now',
+    lampa_movie_descr: 'Кіно, пра якое цяпер гавораць. <br>Instagram: <b>@online.cinematic</b>',
 
     plugins_catalog_work: 'Працаздольныя плагіны',
     plugins_catalog_work_descr: 'Плагіны, якія сапраўды працуюць у лямпе.',
