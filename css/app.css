@@ -1,4 +1,25 @@
 @charset "UTF-8";
+.head__action.open--premium {
+ 
+}
+.cub-premium{
+  display: none!important;
+}
+.cub-premium--detail{
+  display: none!important;
+}
+.settings-folder[data-component="account"] {
+    display: none; /* Элемент полностью исчезнет и не будет занимать место. */
+}
+.head__time{
+   display: none!important;
+}
+.head__action.notice--icon {
+    display: none !important; /* Полностью скрыть элемент. */
+}
+.head__markers{
+  display: none !important;
+}
 .welcome {
   position: fixed;
   top: 0;
