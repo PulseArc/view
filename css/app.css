@@ -2,6 +2,9 @@
 .head__action.open--premium {
  
 }
+.menu__item.selector[data-action="myperson"] {
+    display: none ; 
+}
 .cub-premium{
   display: none!important;
 }
