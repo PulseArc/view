@@ -2158,10 +2158,11 @@ body.light--version .menu__item {
   transition: opacity 0.4s;
   will-change: opacity;
 }
+/* Отвечает за цвет который меняет фон */
 .background__one.visible, .background__two.visible {
-  opacity: 1;
+  opacity: 0;
 }
-
+/* Конец */
 .settings {
   position: fixed;
   top: 0;
