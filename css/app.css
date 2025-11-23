@@ -1020,6 +1020,7 @@ body.ambience--enable .navigation-bar {
   text-align: center;
   min-height: 1.4em;
   padding: 0 2em;
+  
 }
 
 body.true--mobile .head-backward {
@@ -1356,6 +1357,7 @@ body.light--version .wrap__left {
   left: 0;
   width: 100%;
   z-index: 15;
+  
 }
 .head__body {
   padding: 0.5em 1.5em;
@@ -1369,6 +1371,8 @@ body.light--version .wrap__left {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+       
+
 }
 .head__logo-icon {
   width: 4em;
@@ -1378,6 +1382,40 @@ body.light--version .wrap__left {
   margin-right: 1em;
   position: relative;
 }
+
+.head__logo-icon {
+    animation: minimalShift 30s ease-in-out infinite;
+    animation-fill-mode: both; /* чтобы в паузе оставаться в исходном положении */
+    cursor: pointer;
+}
+
+@keyframes minimalShift {
+    /* Активная часть — первые 10% от 30s = 3s */
+    0% {
+        transform: translateX(0);
+    }
+    4% {
+        transform: translateX(2px);
+    }
+    5% {
+        transform: translateX(0);
+    }
+    5.5% {
+        transform: translateX(1px);
+    }
+    6% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(0);
+    }
+
+    /* Пауза — от 10% до 100% (27 секунд неподвижности) */
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .head__logo-local {
   position: absolute;
   bottom: 0;
@@ -1474,6 +1512,7 @@ body.light--version .wrap__left {
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   line-height: 1.4;
+  visibility: hidden;
 }
 .head__action {
   width: 2.8em;
@@ -1606,6 +1645,8 @@ body.true--mobile .head__menu-icon {
 }
 body.true--mobile .head__logo-icon{
    display: block;
+   width:5.5em;
+  cursor: default;
 }
 body.true--mobile .head__action {
   margin-left: 1em;
@@ -14043,6 +14084,7 @@ body.advanced--animation:not(.no--animation) .full-review-add.animate-trigger-en
      -moz-animation: animation-trigger-enter 0.2s forwards;
        -o-animation: animation-trigger-enter 0.2s forwards;
           animation: animation-trigger-enter 0.2s forwards;
+          
 }
 body.advanced--animation:not(.no--animation) .full-person.focus .full-person__photo, body.advanced--animation:not(.no--animation) .full-person.hover .full-person__photo {
   -webkit-animation: animation-button-focus 0.2s;
