@@ -1032,6 +1032,12 @@ body.ambience--enable .navigation-bar {
 body.true--mobile .head-backward {
   display: block;
 }
+body.true--mobile .wrap__content .wrap__left {
+   padding-top: 5.5em;
+}
+body.true--mobile .wrap__left{
+ padding-top: 5.5em;
+}
 
 .wrap {
   display: -webkit-box;
@@ -1044,7 +1050,7 @@ body.true--mobile .head-backward {
 }
 .wrap__left {
   width: 15em;
-  padding-top: 5.5em;
+  padding-top: 4em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -1069,7 +1075,7 @@ body.true--mobile .head-backward {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  padding-top: 5.5em;
+  padding-top: 4em;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   -o-transition: -o-transform 0.2s;
