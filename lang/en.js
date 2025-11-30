@@ -213,7 +213,7 @@ export default {
     torent_nohash_do_one: 'Check if you configured Jackett correctly',
     torent_nohash_do_two: 'Private sources may not provide a link to the file',
     torent_nohash_do_three: 'Make sure Jackett can download the file too',
-    torent_nohash_do_four: 'Write to our telegram group: @lampa_group',
+    torent_nohash_do_four: 'Write on Instagram: @online.cinematic',
     torent_nohash_do_five: 'Specify which movie, which distribution and, if possible, a photo of this distribution',
 
     torrent_error_text: 'Failed to connect to TorrServer. Let\'s quickly go through the list of possible problems and check everything.',
@@ -229,7 +229,7 @@ export default {
     torrent_error_info_4: 'Frequent occurrence, antivirus or firewall can block access by IP address, try disabling antivirus and firewall.',
     torrent_error_info_5: 'On any other device on the same network, open the {ip} address in a browser and check if the TorrServer web interface is available.',
     torrent_error_info_6: 'If, after all the checks, a connection error still occurs, try restarting TorrServer and the Internet adapter.',
-    torrent_error_info_7: 'If the problem persists, write to the Telegram group @lampa_group with the text (Lampa does not connect to TorrServer after all checks, the current address is {ip})',
+    torrent_error_info_7: 'If the problem is not fixed, write to Instagram @online.cinematic with the text (Cinematic is not connecting to TorrServer after all checks, current address {ip})',
     torrent_error_start: 'Start verification',
     torrent_error_nomatrix: 'Failed to verify Matrix version',
     torrent_error_made: 'Performed',
@@ -239,8 +239,8 @@ export default {
     torrent_error_connect: 'Connection error',
 
     torrent_install_need: 'Requires TorrServer',
-    torrent_install_text: 'TorrServer is an application that allows you to view content from torrent files online.<br><br>More detailed information on installation can be found in the Telegram groups below.',
-    torrent_install_contact: 'Telegram groups',
+    torrent_install_text: 'TorrServer is an application that allows you to view content from torrent files in online mode.',
+    torrent_install_contact: 'Instagram',
 
     torrent_item_bitrate: 'Bitrate',
     torrent_item_seeds: 'Seeds',
@@ -294,8 +294,8 @@ export default {
     torrent_parser_torlook_fallback_search_notification: 'Jackett parser is not available or the connection settings are incorrect. Searching Torlook...',
 
     about_text: 'The application is completely free and uses public links to get information about videos, new releases, popular movies, etc. All available information is used solely for educational purposes, the application does not use its own servers to distribute information.',
-    about_channel: 'Our channel',
-    about_group: 'Group',
+    about_channel: 'Instagram',
+    about_group: 'TikTok',
     about_version: 'Version',
     about_donate: 'Donat',
 
@@ -983,7 +983,7 @@ export default {
     settings_interface_hide_outside_the_screen: 'Hide cards off screen',
     settings_interface_hide_outside_the_screen_descr: 'This will speed up UI rendering and improve performance',
 
-    https_text: 'You are using the HTTPS protocol, in this protocol the lamp does not work correctly. For the correct operation of the lamp, use the address with the HTTP protocol',
+    https_text: 'You are using the HTTPS protocol, in this protocol the Cinematic does not work correctly. For the correct operation of the Cinematic, use the address with the HTTP protocol',
 
     extensions_hpu_best: 'Popular',
     extensions_hpu_recomend: 'Recommended',
@@ -1055,7 +1055,7 @@ export default {
     termsofuse_t_13: 'If you believe that the Lampa application still contains content that violates your copyright, you can contact the rights holder of that content and request its removal from the themoviedb.org website. In turn, the Lampa application can remove content upon receiving a proper copyright infringement notification.',
     settings_rest_protocol_use: 'Secure connection',
     settings_rest_protocol_descr: 'Use HTTPS protocol',
-    install_app_apk_text: 'We noticed that you are using MediaStationX to run Lampa on Android. We recommend that you install Lampa as an APK application. You can download the latest version of the application here:',
+    install_app_apk_text: 'We noticed that you are using MediaStationX to run Cinematic on Android. We recommend that you install Lampa as an APK application. You can download the latest version of the application here:',
 
     tv_status_returning_series: 'Returning series',
     tv_status_planned: 'Planned',

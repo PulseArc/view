@@ -211,7 +211,7 @@ export default {
     torent_nohash_do_one: 'Verifique se configurou o Jackett corretamente',
     torent_nohash_do_two: 'Fontes privadas podem não fornecer um endereço para o ficheiro',
     torent_nohash_do_three: 'Certifique-se de que o Jackett também pode fazer o download do ficheiro',
-    torent_nohash_do_four: 'Escreva para nosso grupo do Telegram: @lampa_group',
+    torent_nohash_do_four: 'Escreva no Instagram: @online.cinematic',
     torent_nohash_do_five: 'Especifique qual o filme, qual distribuição e, se possível, uma foto desta distribuição',
 
     torrent_error_text: 'Falha ao conectar ao TorrServer. Vamos passar rapidamente pela lista de possíveis problemas e verificar tudo.',
@@ -227,7 +227,7 @@ export default {
     torrent_error_info_4: 'Ocorrência frequente, antivírus ou firewall pode bloquear o acesso por endereço IP, tente desabilitar antivírus e firewall.',
     torrent_error_info_5: 'Em qualquer outro dispositivo na mesma rede, abra o endereço {ip} em um navegador e verifique se a interface web do TorrServer está disponível.',
     torrent_error_info_6: 'Se, após todas as verificações, ainda ocorrer um erro de conexão, tente reiniciar o TorrServer e o adaptador de Internet.',
-    torrent_error_info_7: 'Se o problema persistir, escreva para o grupo do Telegram @lampa_group.',
+    torrent_error_info_7: 'Se o problema não for resolvido, escreva para o Instagram @online.cinematic com o texto (Cinematic não está conectando ao TorrServer após todas as verificações, endereço atual {ip})',
     torrent_error_start: 'Iniciar verificação',
     torrent_error_nomatrix: 'Falha ao verificar a versão Matrix',
     torrent_error_made: 'Executado',
@@ -237,8 +237,8 @@ export default {
     torrent_error_connect: 'Erro de conexão',
 
     torrent_install_need: 'Requer TorrServer',
-    torrent_install_text: 'TorrServer é uma aplicação que permite visualizar conteúdo de ficheiros torrent online.<br><br>Informações mais detalhadas sobre instalação podem ser encontradas nos grupos do Telegram abaixo.',
-    torrent_install_contact: 'Grupos do Telegram',
+    torrent_install_text: 'TorrServer é uma aplicação que permite visualizar conteúdo de arquivos torrent em modo online.',
+    torrent_install_contact: 'Instagram',
 
     torrent_item_bitrate: 'Bitrate',
     torrent_item_seeds: 'Seeds',
@@ -292,8 +292,8 @@ export default {
     torrent_parser_torlook_fallback_search_notification: 'O analisador Jackett não está disponível ou as configurações de conexão estão incorretas. Procurando Torlook...',
 
     about_text: 'A aplicação é totalmente gratuita e usa endereços públicos para obter informações sobre vídeos, novos lançamentos, filmes populares, etc. Todas as informações disponíveis são usadas exclusivamente para fins educacionais, a aplicação não usa servidores próprios para distribuir informações.',
-    about_channel: 'Nosso canal',
-    about_group: 'Grupo',
+    about_channel: 'Instagram',
+    about_group: 'TikTok',
     about_version: 'Versão',
     about_donate: 'Donativos',
 
@@ -982,7 +982,7 @@ export default {
     settings_interface_hide_outside_the_screen: 'Ocultar cartões fora da tela',
     settings_interface_hide_outside_the_screen_descr: 'Isso acelerará a interface renderizar e melhorar o desempenho',
 
-    https_text: 'Você está usando o protocolo HTTPS, neste protocolo a lâmpada não funciona corretamente. Para o correto funcionamento da lâmpada, utilize o endereço com o protocolo HTTP',
+    https_text: 'Você está usando o protocolo HTTPS, neste protocolo a Cinematic não funciona corretamente. Para o correto funcionamento da Cinematic, utilize o endereço com o protocolo HTTP',
 
     extensions_hpu_best: 'Popular',
     extensions_hpu_recomend: 'Recomendado',
@@ -1040,7 +1040,7 @@ export default {
     speedtest_button: 'Testar velocidade',
     settings_rest_protocol_use: 'Conexão segura',
     settings_rest_protocol_descr: 'Usar protocolo HTTPS',
-    install_app_apk_text: 'Percebemos que você está usando o MediaStationX para executar o Lampa no Android. Recomendamos que você instale o Lampa como um aplicativo APK. Você pode baixar a versão mais recente do aplicativo aqui:',
+    install_app_apk_text: 'Percebemos que você está usando o MediaStationX para executar o Cinematic no Android. Recomendamos que você instale o Lampa como um aplicativo APK. Você pode baixar a versão mais recente do aplicativo aqui:',
 
     tv_status_returning_series: 'Em andamento',
     tv_status_planned: 'Planejado',

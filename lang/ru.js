@@ -276,7 +276,7 @@ export default {
     torent_nohash_do_one: 'Проверьте правильно ли вы настроили Jackett',
     torent_nohash_do_two: 'Приватные источники могут не выдавать ссылку на файл',
     torent_nohash_do_three: 'Убедитесь что Jackett тоже может скачать файл',
-    torent_nohash_do_four: 'Написать в нашу Telegram-группу: @lampa_group',
+    torent_nohash_do_four: 'Написать в Instagram: @online.cinematic',
     torent_nohash_do_five: 'Укажите какой фильм, какая раздача и по возможности фото этой раздачи',
 
     torrent_error_text: 'Не удалось подключиться к TorrServer. Давайте быстро пройдёмся по списку возможных проблем и всё проверим.',
@@ -292,7 +292,7 @@ export default {
     torrent_error_info_4: 'Частое явление, антивирус или брандмауэр может блокировать доступ по IP-адресу, попробуйте отключить антивирус и брандмауэр.',
     torrent_error_info_5: 'На любом другом устройстве в этой же сети, откройте в браузере адрес {ip} и проверьте, доступен ли веб-интерфейс TorrServer.',
     torrent_error_info_6: 'Если после всех проверок всё равно возникает ошибка подключения, попробуйте перезагрузить TorrServer и интернет-адаптер.',
-    torrent_error_info_7: 'Если проблема не устранена, пишите в Telegram-группу @lampa_group с текстом (Lampa не подключается к TorrServer после всех проверок, текущий адрес {ip})',
+    torrent_error_info_7: 'Если проблема не устранена, пишите в Instagram @online.cinematic с текстом (Cinematic не подключается к TorrServer после всех проверок, текущий адрес {ip})',
     torrent_error_start: 'Начать проверку',
     torrent_error_nomatrix: 'Не удалось подтвердить версию Matrix',
     torrent_error_made: 'Выполнено',
@@ -303,8 +303,8 @@ export default {
     torrent_error_check_no_auth: 'Сервер ответил на запрос, но не удалось пройти авторизацию',
 
     torrent_install_need: 'Необходим TorrServer',
-    torrent_install_text: 'TorrServer – приложение, которое позволяет просматривать контент из торрент-файлов в онлайн режиме.<br><br>Более детальную информацию по установке вы найдете в Telegram-группах, указанных ниже.',
-    torrent_install_contact: 'Telegram-группы',
+    torrent_install_text: 'TorrServer – приложение, которое позволяет просматривать контент из торрент-файлов в онлайн режиме.',
+    torrent_install_contact: 'Instagram',
 
     torrent_item_bitrate: 'Битрейт',
     torrent_item_seeds: 'Раздают',
@@ -358,8 +358,8 @@ export default {
     torrent_parser_torlook_fallback_search_notification: 'Парсер Jackett не доступен или настройки подключения не верны. Осуществляется поиск в Torlook...',
 
     about_text: 'Приложение полностью бесплатное и использует публичные ссылки для получения информации о видео, новинках, популярных фильмах и т.д. Вся доступная информация используется исключительно в познавательных целях, приложение не использует свои собственные серверы для распространения информации.',
-    about_channel: 'Наш канал',
-    about_group: 'Группа',
+    about_channel: 'Instagram',
+    about_group: 'TikTok',
     about_version: 'Версия',
     about_donate: 'Донат',
 

@@ -274,7 +274,7 @@ export default {
     torent_nohash_do_one: "Zkontrolujte, zda jste správně nastavili Jackett",
     torent_nohash_do_two: "Soukromé zdroje nemusí poskytovat odkaz na soubor",
     torent_nohash_do_three: "Ujistěte se, že Jackett také může stáhnout soubor",
-    torent_nohash_do_four: "Napište do naší Telegram skupiny: @lampa_group",
+    torent_nohash_do_four: 'Napsat na Instagram: @online.cinematic',
     torent_nohash_do_five: "Uveďte, jaký film, jaké vydání a pokud možno foto tohoto vydání",
 
     torrent_error_text: "Nepodařilo se připojit k TorrServer. Pojďme rychle projít seznam možných problémů a vše zkontrolovat.",
@@ -290,7 +290,7 @@ export default {
     torrent_error_info_4: "Častý jev, antivirus nebo firewall může blokovat přístup podle IP adresy, zkuste vypnout antivirus a firewall.",
     torrent_error_info_5: "Na jakémkoli jiném zařízení v této síti otevřete v prohlížeči adresu {ip} a zkontrolujte, zda je dostupné webové rozhraní TorrServer.",
     torrent_error_info_6: "Pokud po všech kontrolách stále dochází k chybě připojení, zkuste restartovat TorrServer a internetový adaptér.",
-    torrent_error_info_7: "Pokud problém není odstraněn, pište do Telegram skupiny @lampa_group s textem (Lampa se nepřipojuje k TorrServer po všech kontrolách, aktuální adresa {ip})",
+    torrent_error_info_7: 'Pokud problém přetrvává, napište na Instagram @online.cinematic s textem (Cinematic se po všech kontrolách nepřipojuje k TorrServer, aktuální adresa {ip})',
     torrent_error_start: "Začít kontrolu",
     torrent_error_nomatrix: "Nepodařilo se potvrdit verzi Matrix",
     torrent_error_made: "Hotovo",
@@ -301,8 +301,8 @@ export default {
     torrent_error_check_no_auth: "Server odpověděl na požadavek, ale nepodařilo se projít autorizací",
 
     torrent_install_need: "Je potřeba TorrServer",
-    torrent_install_text: "TorrServer je aplikace, která umožňuje sledovat obsah z torrent souborů online.<br><br>Podrobnější informace o instalaci najdete v Telegram skupinách uvedených níže.",
-    torrent_install_contact: "Telegram skupiny",
+    torrent_install_text: 'TorrServer je aplikace, která umožňuje prohlížet obsah z torrent souborů v online režimu.',
+    torrent_install_contact: 'Instagram',
 
     torrent_item_bitrate: "Bitrate",
     torrent_item_seeds: "Sdílejí",
@@ -356,8 +356,8 @@ export default {
     torrent_parser_torlook_fallback_search_notification: "Parser Jackett není dostupný nebo nastavení připojení nejsou správná. Probíhá hledání v Torlook...",
 
     about_text: "Aplikace je zcela zdarma a používá veřejné odkazy pro získání informací o videích, novinkách, populárních filmech atd. Veškeré dostupné informace jsou používány výhradně pro vzdělávací účely, aplikace nepoužívá své vlastní servery pro šíření informací.",
-    about_channel: "Náš kanál",
-    about_group: "Skupina",
+    about_channel: "Instagram",
+    about_group: "TikTok",
     about_version: "Verze",
     about_donate: "Darovat",
 
@@ -1110,7 +1110,7 @@ export default {
     input_detection_mouse: "Chcete přepnout na ovládání myší?",
     input_detection_remote: "Chcete přepnout na ovládání dálkovým ovladačem?",
 
-    https_text: "Používáte protokol HTTPS, se kterým Lampa nefunguje správně. Pro správnou funkci aplikace použijte adresu s protokolem HTTP",
+    https_text: "Používáte protokol HTTPS, se kterým Cinematic nefunguje správně. Pro správnou funkci aplikace použijte adresu s protokolem HTTP",
 
     premiere_author_recomend_1: "Objednejte si pizzu a připravte se na jízdu.",
     premiere_author_recomend_2: "Párty teprve začíná.",
