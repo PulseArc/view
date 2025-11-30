@@ -147,7 +147,7 @@ export default {
     settings_parser_in_search_descr: 'Паказваць вынікі ў пошуку?',
     settings_parser_timeout_title: 'Таймаўт парсера',
     settings_parser_timeout_descr: 'Час у секундах, які будзе чакацца адказу ад сервера',
-    
+
     settings_player_type: 'Тып плэера',
     settings_player_type_descr: 'Якім плэерам прайграваць',
     settings_player_iptv_type: 'Тып плэера для IPTV',
@@ -545,7 +545,7 @@ export default {
     filter_alt_names: 'Іншыя назвы',
     filter_rating_from: 'ад',
     filter_rating_to: 'да',
-    
+
     filter_lang_af: 'Афрыкаанс',
     filter_lang_ar: 'Арабская',
     filter_lang_az: 'Азербайджанская',
@@ -918,17 +918,17 @@ export default {
     day_7: 'Нядзеля',
 
     month_1_e: 'Студзеня',
-    month_2_e: 'Лютага', 
-    month_3_e: 'Сакавіка', 
-    month_4_e: 'Красавіка', 
-    month_5_e: 'Мая', 
-    month_6_e: 'Чэрвеня', 
-    month_7_e: 'Ліпеня', 
-    month_8_e: 'Жніўня', 
-    month_9_e: 'Верасня', 
-    month_10_e: 'Кастрычніка', 
-    month_11_e: 'Лістапада', 
-    month_12_e: 'Снежня', 
+    month_2_e: 'Лютага',
+    month_3_e: 'Сакавіка',
+    month_4_e: 'Красавіка',
+    month_5_e: 'Мая',
+    month_6_e: 'Чэрвеня',
+    month_7_e: 'Ліпеня',
+    month_8_e: 'Жніўня',
+    month_9_e: 'Верасня',
+    month_10_e: 'Кастрычніка',
+    month_11_e: 'Лістапада',
+    month_12_e: 'Снежня',
 
     week_1: 'Пн',
     week_2: 'Аў',
@@ -940,7 +940,7 @@ export default {
 
     notice_none_account: 'У вас яшчэ няма ніякіх апавяшчэнняў, дадайце серыялы ў закладкі і чакайце апавяшчэння аб новых серыях.',
     notice_none_system: 'На дадзены момант у вас адсутнічаюць апавяшчэння. Мы абавязкова апавясцім вас, калі з\'явяцца новыя апавяшчэнні.',
-    
+
     extensions_enable: 'Уключыць',
     extensions_disable: 'Адключыць',
     extensions_check: 'Праверыць статус',
@@ -1026,7 +1026,7 @@ export default {
     settings_interface_glass_opacity: 'Празрыстасць шкла',
     torrent_error_check_no_auth: 'Сервер адказаў на запыт, але не ўдалося прайсці аўтарызацыю',
     settings_interface_card_cover: 'Паказаць вокладку',
-    
+
     title_upcoming_episodes: 'Бліжэйшыя выхады эпізодаў',
     settings_rest_cache_images: 'Кэш малюнкаў',
     settings_rest_cache_images_descr: 'Кэшаваць постэры і фоны ў лакальнае сховішча',
@@ -1091,7 +1091,7 @@ export default {
     settings_rest_cache_all_descr: 'Будуць ачышчаныя ўсе налады і дадзеныя',
     settings_rest_cache_calculate: 'Колькі засталося памяці',
 
-    title_left:'Засталося',
+    title_left: 'Засталося',
 
     account_export_fail_500: 'Невядомая памылка',
     account_export_fail_610: 'Вы выйшлі за мяжу ліміту на сёння',
@@ -1179,19 +1179,19 @@ export default {
     dmca_title: 'Кантэнт заблакаваны',
     dmca_descr: 'Гэты матэрыял недаступны для прагляду. Ён быў заблакаваны па просьбе праваўладальніка ў адпаведнасці з заканадаўствам аб аўтарскіх правах.',
 
-    loading_progress_step_0: 'Падрыхтоўка',
-    loading_progress_step_1: 'Загрузка моў',
-    loading_progress_step_2: 'Пошук люстэркаў',
-    loading_progress_step_3: 'Падрыхтоўка пашырэнняў',
-    loading_progress_step_4: 'Засталося крыху',
-    loading_progress_step_5: 'Ужо хутка',
+    loading_progress_step_0: 'Ініцыялізацыя',
+    loading_progress_step_1: 'Загрузка лакалізацыі',
+    loading_progress_step_2: 'Верыфікацыя крыніцы',
+    loading_progress_step_3: 'Загрузка пашырэнняў',
+    loading_progress_step_4: 'Завяршэнне',
+    loading_progress_step_5: 'Сістэма гатова',
 
     install_extension_rule_1: 'Устаноўка старонняга плагіна',
-    install_extension_rule_2: 'Плагіны ствараюцца незалежнымі распрацоўшчыкамі, і LAMPA не правярае іх змесціва. Усталёўваючы іх, вы згаджаецеся з тым, што:',
+    install_extension_rule_2: 'Плагіны ствараюцца незалежнымі распрацоўшчыкамі, і Cinematic не правярае іх змесціва. Усталёўваючы іх, вы згаджаецеся з тым, што:',
     install_extension_rule_3: '- Некаторыя плагіны могуць запытваць доступ да вашых дадзеных або працаваць з непраўеранымі крыніцамі.',
     install_extension_rule_4: '- Калі ўсталяваны вамі плагін парушае аўтарскія правы або іншыя законы, уся адказнасць за яго выкарыстанне ляжыць на вас.',
     install_extension_rule_5: '- Усталёўвайце толькі плагіны з давераных крыніц. Калі вы сумняваецеся ў бяспецы або законнасці плагіна, лепш адмовіцца ад яго ўсталёўкі.',
-    install_extension_rule_6: 'LAMPA не падтрымлівае і не ўхваляе плагіны, звязаныя з пірацкім кантэнтам.',
+    install_extension_rule_6: 'Cinematic не падтрымлівае і не ўхваляе плагіны, звязаныя з пірацкім кантэнтам.',
     install_extension_rule_7: 'Працягваючы, вы пацвярджаеце, што разумееце гэтыя рызыкі.',
     ad_plugin: 'Рэклама ад плагіна',
 

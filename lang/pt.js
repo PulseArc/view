@@ -146,8 +146,8 @@ export default {
     settings_parser_in_search_descr: 'Mostrar resultados de pesquisa?',
     settings_parser_timeout_title: 'Tempo limite do analisador',
     settings_parser_timeout_descr: 'Tempo em segundos para aguardar uma resposta do servidor',
-	
-	settings_player_type: 'Tipo player',
+
+    settings_player_type: 'Tipo player',
     settings_player_type_descr: 'Qual o player a utilizar',
     settings_player_iptv_type: 'Tipo de player para IPTV',
     settings_player_iptv_type_descr: 'Qual player reproduzir canais de IPTV',
@@ -176,14 +176,14 @@ export default {
     settings_player_quality_descr: 'Qualidade de vídeo preferida para visualização',
     settings_player_hls_title: 'Processando o stream .m3u8',
     settings_player_hls_descr: 'Não toque neste parâmetro se você não sabe o motivo.',
-    
-	settings_plugins_notice: 'Para aplicar o plugin, você precisa reiniciar a aplicação',
+
+    settings_plugins_notice: 'Para aplicar o plugin, você precisa reiniciar a aplicação',
     settings_plugins_add: 'Adicionar plugin',
     settings_plugins_add_descr: 'Para remover um plugin, segure ou clique duas vezes na tecla (OK) nele',
     settings_plugins_install: 'Instalar Plugin',
     settings_plugins_install_descr: 'Instalar um plugin da lista de disponíveis',
-	 
-	settings_server_link: 'Usar endereço',
+
+    settings_server_link: 'Usar endereço',
     settings_server_links: 'Endereços',
     settings_server_placeholder: 'Por exemplo: 192.168.X',
     settings_server_link_one: 'Endereço principal',
@@ -203,7 +203,7 @@ export default {
     settings_server_password: 'Password',
     settings_server_not_specified: 'Não especificado',
 
-	torent_nohash_reasons: 'Motivos',
+    torent_nohash_reasons: 'Motivos',
     torent_nohash_reason_one: 'TorrServer não conseguiu fazer o download do ficheiro torrent',
     torent_nohash_reason_two: 'Resposta do TorrServer',
     torent_nohash_reason_three: 'Endereço',
@@ -213,8 +213,8 @@ export default {
     torent_nohash_do_three: 'Certifique-se de que o Jackett também pode fazer o download do ficheiro',
     torent_nohash_do_four: 'Escreva para nosso grupo do Telegram: @lampa_group',
     torent_nohash_do_five: 'Especifique qual o filme, qual distribuição e, se possível, uma foto desta distribuição',
-	 
-	torrent_error_text: 'Falha ao conectar ao TorrServer. Vamos passar rapidamente pela lista de possíveis problemas e verificar tudo.',
+
+    torrent_error_text: 'Falha ao conectar ao TorrServer. Vamos passar rapidamente pela lista de possíveis problemas e verificar tudo.',
     torrent_error_step_1: 'O TorrServer está a correr',
     torrent_error_step_2: 'IP dinâmico',
     torrent_error_step_3: 'Protocolo e Porta',
@@ -236,7 +236,7 @@ export default {
     torrent_error_complite: 'Para completar',
     torrent_error_connect: 'Erro de conexão',
 
-	torrent_install_need: 'Requer TorrServer',
+    torrent_install_need: 'Requer TorrServer',
     torrent_install_text: 'TorrServer é uma aplicação que permite visualizar conteúdo de ficheiros torrent online.<br><br>Informações mais detalhadas sobre instalação podem ser encontradas nos grupos do Telegram abaixo.',
     torrent_install_contact: 'Grupos do Telegram',
 
@@ -253,7 +253,7 @@ export default {
     torrent_remove_title: 'Remover',
     torrent_remove_descr: 'O torrent será removido da sua lista',
 
-	torrent_parser_any_one: 'Qualquer',
+    torrent_parser_any_one: 'Qualquer',
     torrent_parser_any_two: 'Qualquer',
     torrent_parser_no_choice: 'Não escolhido',
     torrent_parser_yes: 'Sim',
@@ -290,14 +290,14 @@ export default {
     torrent_parser_magnet_error: 'Falha ao obter o endereço magnético',
     torrent_parser_no_responce: 'O analisador não está respondendo à solicitação',
     torrent_parser_torlook_fallback_search_notification: 'O analisador Jackett não está disponível ou as configurações de conexão estão incorretas. Procurando Torlook...',
-	
-	about_text: 'A aplicação é totalmente gratuita e usa endereços públicos para obter informações sobre vídeos, novos lançamentos, filmes populares, etc. Todas as informações disponíveis são usadas exclusivamente para fins educacionais, a aplicação não usa servidores próprios para distribuir informações.',
+
+    about_text: 'A aplicação é totalmente gratuita e usa endereços públicos para obter informações sobre vídeos, novos lançamentos, filmes populares, etc. Todas as informações disponíveis são usadas exclusivamente para fins educacionais, a aplicação não usa servidores próprios para distribuir informações.',
     about_channel: 'Nosso canal',
     about_group: 'Grupo',
     about_version: 'Versão',
     about_donate: 'Donativos',
 
-	title_watched: 'Você assistiu',
+    title_watched: 'Você assistiu',
     title_settings: 'Configurações',
     title_collections: 'Coleções',
     title_company: 'Empresa',
@@ -366,18 +366,18 @@ export default {
     title_subscribes: 'Subscrições',
     title_unsubscribe: 'Cancelar inscrição',
     title_language: 'Idioma original',
-	
-	subscribe_success: 'Inscreveu-se com sucesso',
+
+    subscribe_success: 'Inscreveu-se com sucesso',
     subscribe_error: 'Ocorreu um erro ao inscrever, por favor tente novamente mais tarde',
     subscribe_noinfo: 'Falha ao recuperar informações, tente novamente mais tarde',
-	 
+
     company_headquarters: 'Sede',
     company_homepage: 'Website',
     company_country: 'País',
 
     country_ad: 'Andorra',
     country_ae: 'Emirados Árabes Unidos',
-	country_af: 'Afeganistão',
+    country_af: 'Afeganistão',
     country_al: 'Albânia',
     country_am: 'Armênia',
     country_ao: 'Angola',
@@ -620,7 +620,7 @@ export default {
     filter_lang_yi: 'Iídiche',
     filter_lang_zh: 'Chinês',
 
-	filter_genre_ac: 'Ação',
+    filter_genre_ac: 'Ação',
     filter_genre_ad: 'Aventura',
     filter_genre_mv: 'Desenhos animados',
     filter_genre_cm: 'Comédia',
@@ -649,12 +649,12 @@ export default {
     filter_genre_mp: 'Guerra e Política',
 
 
-	empty_title: 'Vazio',
+    empty_title: 'Vazio',
     empty_text: 'Nada encontrado para seu filtro, por favor refine seu filtro.',
     empty_title_two: 'Está vazio aqui',
     empty_text_two: 'A lista está vazia no momento.',
 
-	menu_main: 'Início',
+    menu_main: 'Início',
     menu_movies: 'Filmes',
     menu_tv: 'Séries',
     menu_catalog: 'Catálogo',
@@ -687,12 +687,12 @@ export default {
     plugins_load_from: 'Carregado do CUB',
     plugins_ok_for_check: 'Clique em (OK) para testar o plugin',
     plugins_no_loaded: 'Ao iniciar a aplicação alguns plugins não puderam ser carregados',
-	 
+
     time_viewed: 'Visualizado',
     time_from: 'Desde',
     time_reset: 'Reset tempo visualizado',
 
-	settings_clear_cache: 'Cache e dados limpos',
+    settings_clear_cache: 'Cache e dados limpos',
     settings_user_links: 'Endereço personalizado',
     settings_for_local: 'Para TorrServer local',
     settings_add: 'Adicionar',
@@ -701,7 +701,7 @@ export default {
     settings_added: 'Adicionado',
     settings_removed: 'Eliminado',
 
-	settings_param_player_inner: 'Lampa',
+    settings_param_player_inner: 'Lampa',
     settings_param_player_outside: 'Externo',
     settings_param_player_inner_tvos: 'Interno',
     settings_param_yes: 'Sim',
@@ -738,12 +738,12 @@ export default {
     settings_param_keyboard_lampa: 'Lampa',
     settings_param_keyboard_system: 'Sistema',
 
-	helper_keyboard: 'Depois de inserir o valor, pressione o botão "Voltar" para guardar',
+    helper_keyboard: 'Depois de inserir o valor, pressione o botão "Voltar" para guardar',
     helper_torrents: 'Mantenha pressionada a tecla (OK) para abrir o menu de contexto',
     helper_cleared: 'Sucesso, dicas serão mostradas novamente.',
     helper_torrents_view: 'Mantenha pressionada a tecla (OK) para redefinir o tempo de visualizado e exibir o menu',
-	 
-	fav_sync_title: 'Sincronização dos favoritos',
+
+    fav_sync_title: 'Sincronização dos favoritos',
     fav_sync_text: 'Conecte a sincronização e visualize em qualquer dispositivo os seus favoritos. <br><br>Para isso, registe-se no site {site}, crie um perfil e faça login na aplicação.',
     fav_sync_site: 'Site',
     fav_remove_title: 'Remover do histórico',
@@ -759,7 +759,7 @@ export default {
 
     timetable_empty: 'Esta secção exibirá as datas de lançamento dos novos episódios.',
 
-	player_quality: 'Qualidade',
+    player_quality: 'Qualidade',
     player_flow: 'Fluxo',
     player_tracks: 'Faixas de áudio',
     player_disabled: 'Desativado',
@@ -798,11 +798,11 @@ export default {
     player_normalization_step_hight: 'Alto',
     player_youtube_no_played: 'Desculpe, este vídeo não está disponível em sua região e pode ter sido bloqueado ou removido.',
     player_youtube_start_play: 'Para começar a reproduzir o vídeo, clique no botão "Reproduzir"',
-	
-	broadcast_open: 'Abrir o cartão em outro dispositivo',
+
+    broadcast_open: 'Abrir o cartão em outro dispositivo',
     broadcast_play: 'Escolha o dispositivo para assistir',
 
-	card_new_episode: 'Novo episódio',
+    card_new_episode: 'Novo episódio',
     card_book_remove: 'Remover dos favoritos',
     card_book_add: 'Adicionar aos favoritos',
     card_book_descr: 'Procure no menu (Favoritos)',
@@ -819,19 +819,19 @@ export default {
     keyboard_listen: 'Fale, estou ouvindo...',
     keyboard_nomic: 'Sem acesso ao microfone',
 
-	notice_new_quality: 'Nova qualidade disponível',
+    notice_new_quality: 'Nova qualidade disponível',
     notice_quality: 'Qualidade',
     notice_new_episode: 'Novo episódio',
     notice_none: 'Ainda não tem notificações, registe-se em <b>{site}</b> para acompanhar novos episódios e lançamentos.',
     notice_in_quality: 'Como',
     notice_none_account: 'Você ainda não tem notificações, marque a série e aguarde as notificações de novos episódios.',
     notice_none_system: 'Você não tem nenhuma notificação. Nós iremos notificá-lo quando novas notificações estiverem disponíveis.',
-	 
-	copy_link: 'Copiar endereço do vídeo',
+
+    copy_link: 'Copiar endereço do vídeo',
     copy_secuses: 'Endereço copiado para a área de transferência',
     copy_error: 'Erro ao copiar o endereço',
 
-	account_sync_to_profile: 'Todos os favoritos serão movidos para o perfil',
+    account_sync_to_profile: 'Todos os favoritos serão movidos para o perfil',
     account_sync_secuses: 'Todos os favoritos foram transferidos com sucesso',
     account_profiles: 'Perfis',
     account_profiles_empty: 'Falha ao obter lista de perfis',
@@ -850,7 +850,7 @@ export default {
     account_premium: 'Descubra mais recursos com uma conta CUB Premium. Aumentando limites e acesso a recursos adicionais do serviço.',
     account_premium_more: 'Saiba mais sobre CUB Premium',
     account_limited: 'Você atingiu o limite máximo. Aumente o limite com uma conta CUB Premium. Saiba mais em <span class="account-modal__site">{site}/premium</span>',
-    
+
     account_code_enter: 'Digite um código de seis dígitos',
     account_code_error: 'Você inseriu um código incorreto ou desatualizado',
     account_code_wrong: 'Você especificou um formato incorreto',
@@ -858,7 +858,7 @@ export default {
     account_code_input: 'Inserir código',
     settings_cub_signin_button: 'Fazer login',
 
-	network_noconnect: 'Sem conexão de rede',
+    network_noconnect: 'Sem conexão de rede',
     network_404: 'A página solicitada não foi encontrada. [404]',
     network_401: 'Falha na autorização',
     network_500: 'Erro do servidor interno. [500]',
@@ -924,7 +924,7 @@ export default {
     week_6: 'Sáb',
     week_7: 'Dom',
 
-	extensions_enable: 'Ativar',
+    extensions_enable: 'Ativar',
     extensions_disable: 'Desativar',
     extensions_check: 'Verificar estado',
     extensions_install: 'Instalar',
@@ -1072,7 +1072,7 @@ export default {
     settings_rest_cache_all_descr: 'Todas as configurações e dados serão apagados',
     settings_rest_cache_calculate: 'Quanta memória resta',
 
-    title_left:'Esquerda',
+    title_left: 'Esquerda',
 
     account_export_fail_500: 'Erro desconhecido',
     account_export_fail_610: 'Você ultrapassou o limite para hoje',
@@ -1149,23 +1149,23 @@ export default {
     dmca_title: 'Conteúdo bloqueado',
     dmca_descr: 'Este material não está disponível para visualização. Foi bloqueado a pedido do detentor dos direitos autorais, de acordo com a lei de direitos autorais.',
 
-    loading_progress_step_0: 'Preparação',
-    loading_progress_step_1: 'Carregando idiomas',
-    loading_progress_step_2: 'Procurando espelhos',
-    loading_progress_step_3: 'Preparando extensões',
-    loading_progress_step_4: 'Quase pronto',
-    loading_progress_step_5: 'Chegando em breve',
+    loading_progress_step_0: 'Inicialização',
+    loading_progress_step_1: 'Carregamento da localização',
+    loading_progress_step_2: 'Verificação da fonte',
+    loading_progress_step_3: 'Carregamento de extensões',
+    loading_progress_step_4: 'Conclusão',
+    loading_progress_step_5: 'Sistema pronto',
 
     install_extension_rule_1: 'Instalação de um plug-in de terceiros',
-    install_extension_rule_2: 'Os plug-ins são criados por desenvolvedores independentes, e o LAMPA não verifica seu conteúdo. Ao instalá-los, você concorda que:',
+    install_extension_rule_2: 'Os plug-ins são criados por desenvolvedores independentes, e o Cinematic não verifica seu conteúdo. Ao instalá-los, você concorda que:',
     install_extension_rule_3: '- Alguns plug-ins podem solicitar acesso aos seus dados ou trabalhar com fontes não verificadas.',
     install_extension_rule_4: '- Se o plug-in que você instalar violar direitos autorais ou outras leis, toda a responsabilidade pelo seu uso será sua.',
     install_extension_rule_5: '- Instale apenas plug-ins de fontes confiáveis. Se você tiver dúvidas sobre a segurança ou legalidade de um plug-in, é melhor não instalá-lo.',
-    install_extension_rule_6: 'O LAMPA não apoia nem aprova plug-ins relacionados a conteúdo pirata.',
+    install_extension_rule_6: 'O Cinematic não apoia nem aprova plug-ins relacionados a conteúdo pirata.',
     install_extension_rule_7: 'Ao continuar, você confirma que compreende esses riscos.',
     ad_plugin: 'Anúncio do plugin',
 
-	terminal_title: 'Terminal',
+    terminal_title: 'Terminal',
     terminal_no_access: 'Sem acesso',
     terminal_confirm: 'Permitir',
     terminal_deny: 'Negar',

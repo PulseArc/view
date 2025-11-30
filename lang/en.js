@@ -1064,9 +1064,9 @@ export default {
     tv_status_canceled: 'Canceled',
     tv_status_pilot: 'Pilot',
 
-    tv_status_released:'Released',
-    tv_status_rumored:'Rumored',
-    tv_status_post_production:'Post Production',
+    tv_status_released: 'Released',
+    tv_status_rumored: 'Rumored',
+    tv_status_post_production: 'Post Production',
 
     title_last_year: 'Last year',
 
@@ -1087,7 +1087,7 @@ export default {
     settings_rest_cache_all_descr: 'All settings and data will be cleared',
     settings_rest_cache_calculate: 'How much memory is left',
 
-    title_left:'Left',
+    title_left: 'Left',
 
     account_export_fail_500: 'Unknown error',
     account_export_fail_610: 'You have exceeded the limit for today',
@@ -1164,19 +1164,19 @@ export default {
     dmca_title: 'Content blocked',
     dmca_descr: 'This material is not available for viewing. It has been blocked at the request of the copyright holder in accordance with copyright law.',
 
-    loading_progress_step_0: 'Preparation',
-    loading_progress_step_1: 'Loading languages',
-    loading_progress_step_2: 'Searching for mirrors',
-    loading_progress_step_3: 'Preparing extensions',
-    loading_progress_step_4: 'Almost there',
-    loading_progress_step_5: 'Coming soon',
+    loading_progress_step_0: 'Initialization',
+    loading_progress_step_1: 'Loading localization',
+    loading_progress_step_2: 'Source verification',
+    loading_progress_step_3: 'Loading extensions',
+    loading_progress_step_4: 'Completion',
+    loading_progress_step_5: 'System ready',
 
     install_extension_rule_1: 'Installing a third-party plugin',
-    install_extension_rule_2: 'Plugins are created by independent developers, and LAMPA does not verify their content. By installing them, you agree that:',
+    install_extension_rule_2: 'Plugins are created by independent developers, and Cinematic does not verify their content. By installing them, you agree that:',
     install_extension_rule_3: '- Some plugins may request access to your data or work with unverified sources.',
     install_extension_rule_4: '- If the plugin you install violates copyright or other laws, you are fully responsible for its use.',
     install_extension_rule_5: '- Install only plugins from trusted sources. If you have any doubts about the security or legality of a plugin, it is better to refrain from installing it.',
-    install_extension_rule_6: 'LAMPA does not support or endorse plugins related to pirated content.',
+    install_extension_rule_6: 'Cinematic does not support or endorse plugins related to pirated content.',
     install_extension_rule_7: 'By proceeding, you confirm that you understand these risks.',
     ad_plugin: 'Advertisement from the plugin',
 
