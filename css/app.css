@@ -8,13 +8,18 @@
 .true--mobile .head__action.open--favorite.icon--blink {
     display: none;
 }
+.true--mobile .head__action.open--feed {
+    display: none;
+}
+.true--mobile .head__action.head__settings.selector.open--search{
+  display: block;
+}
 .ad-bot{
   display: none ; 
-}/* Коли body має клас 'true--mobile', 
-   елемент з такими класами буде прихований */
+}
 
-.head__action.open--premium {
- 
+.head__action.selector.full-screen {
+  display: none ;
 }
 .menu__item.selector[data-action="myperson"] {
     display: none ; 
@@ -32,7 +37,7 @@
    display: none!important;
 }
 .head__action.notice--icon {
-    display: none !important; /* Полностью скрыть элемент. */
+ display: none!important;
 }
 .head__markers{
   display: none !important;
@@ -1557,10 +1562,12 @@ body.light--version .wrap__left {
   background-color: #fff;
   color: #000;
 }
-.head__action.active {
+.head__action.active,
+.navigation-bar__item.active {
   position: relative;
 }
-.head__action.active::after {
+.head__action.active::after,
+.navigation-bar__item.active::after {
   content: "";
   display: block;
   width: 0.5em;
@@ -1568,8 +1575,8 @@ body.light--version .wrap__left {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #EA4E4E;
-  border: 0.15em solid #fff;
+  background-color: #ff0000;
+  border: 0.15em solid #ff0000;
   -webkit-border-radius: 100%;
      -moz-border-radius: 100%;
           border-radius: 100%;
@@ -1896,6 +1903,7 @@ body.true--mobile.orientation--landscape .head .head__body {
 .menu {
   width: 100%;
 }
+
 .menu__split {
   margin: 1em 1em;
   width: 2.3em;
@@ -9803,22 +9811,22 @@ body.platform--netcast .torrent-item__ffprobe > div::before {
   background-color: #D69517;
 }
 .feed-item__label--now {
-  background-color: #6F8DDC;
+  background-color: #36529d;
 }
 .feed-item__label--now_playing {
-  background-color: #DA6FDC;
+  background-color: #8232a1;
 }
 .feed-item__label--uhd {
-  background-color: #69B96C;
+  background-color: rgb(38 146 75);
 }
 .feed-item__label--popular {
   background-color: #B9A769;
 }
 .feed-item__label--trailer {
-  background-color: #9291A4;
+  background-color: #505050;
 }
 .feed-item__label--episode {
-  background-color: #CD5050;
+  background-color: #d22d2d;
 }
 .feed-item__body {
   padding-left: 3.8em;
