@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
-  
-
+  .menu__item.selector[data-action="subscribes"] {
+    display: none !important; /* Использование !important может понадобиться для переопределения существующих стилей */
+}
+.full-start__button.selector.button--subscribe {
+    display: none;
+}
 .navigation-bar__label{
   display: none;
 }
@@ -2683,6 +2687,7 @@ body.settings--open .settings__layer {
 .scroll--over {
   overflow: hidden;
 }
+
 .scroll--mask {
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(8%, white), color-stop(92%, white), to(rgba(255, 255, 255, 0)));
   -webkit-mask-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 8%, white 92%, rgba(255, 255, 255, 0) 100%);
@@ -14453,4 +14458,5 @@ body.glass--style.platform--browser .card-watched__item:nth-child(5), body.glass
   background-color: rgba(0, 0, 0, 0.06);
   -webkit-backdrop-filter: blur(1em);
           backdrop-filter: blur(1em);
-} */
+/* Проверьте, есть ли у .menu__list свойство display: flex; */
+
