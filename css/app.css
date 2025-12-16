@@ -3096,13 +3096,13 @@ body.settings--open .settings__layer {
   background-image: url(../img/icons/menu/bookmark.svg);
 }
 .card__icon.icon--wath {
-  background-image: url(../img/icons/menu/time.svg);
+  background-image: url(../img/icons/menu/play.svg);
 }
 .card__icon.icon--like {
-  background-image: url(../img/icons/menu/like.svg);
+  background-image: url(../img/icons/menu/heart.svg);
 }
 .card__icon.icon--history {
-  background-image: url(../img/icons/settings/player.svg);
+  background-image: url(../img/icons/menu/history.svg);
 }
 .card__promo {
   position: absolute;
@@ -6897,10 +6897,10 @@ body.selectbox--open .selectbox__layer {
   background-image: url(../img/icons/menu/bookmark.svg);
 }
 .info__icon.icon--like {
-  background-image: url(../img/icons/menu/like.svg);
+  background-image: url(../img/icons/menu/heart.svg);
 }
 .info__icon.icon--wath {
-  background-image: url(../img/icons/menu/time.svg);
+  background-image: url(../img/icons/menu/play.svg);
 }
 .info__icon.focus {
   -webkit-box-shadow: 0 0 0 0.3em #fff;
