@@ -4005,6 +4005,19 @@ body.card--no-cover .full-start__background {
             align-items: flex-start;
   }
 }
+.full-start-new__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-border-radius: 1em;
+     -moz-border-radius: 1em;
+          border-radius: 1em;
+  opacity: 0;
+}
 @media screen and (max-width: 480px) {
   .full-start-new__body {
     display: block;
@@ -4045,8 +4058,8 @@ body.card--no-cover .full-start__background {
     margin-left: -1.5em;
     margin-right: -1.5em;
     padding: 1.5em;
-    margin-top: -14em;
-    margin-top: -20vh;
+    
+    margin-top: 0.5EM;
     position: relative;
     z-index: 1;
     -webkit-border-top-left-radius: 2em;
@@ -4096,34 +4109,49 @@ body.card--no-cover .full-start__background {
     font-size: 1em;
   }
 }
-.full-start-new__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-border-radius: 1em;
-     -moz-border-radius: 1em;
-          border-radius: 1em;
-  opacity: 0;
-}
 @media screen and (max-width: 480px) {
-  .full-start-new__img {
-    -webkit-transform: translate3d(0, 2em, 0);
-       -moz-transform: translate3d(0, 2em, 0);
-            transform: translate3d(0, 2em, 0);
-    -webkit-transition: opacity 0.2s, -webkit-transform 0.4s;
-    transition: opacity 0.2s, -webkit-transform 0.4s;
-    -o-transition: opacity 0.2s, -o-transform 0.4s;
-    -moz-transition: opacity 0.2s, transform 0.4s, -moz-transform 0.4s;
-    transition: opacity 0.2s, transform 0.4s;
-    transition: opacity 0.2s, transform 0.4s, -webkit-transform 0.4s, -moz-transform 0.4s, -o-transform 0.4s;
-    -webkit-border-radius: 2em;
-       -moz-border-radius: 2em;
-            border-radius: 2em;
-  }
+    /* 1. Контейнер — ограничитель для всех слоев */
+    .full-start-new__poster {
+        position: relative;
+        width: 100%;
+        height: 65vh !important; /* Строго 70% высоты экрана */
+        border-radius: 0 !important;
+        overflow: hidden;
+        background: black; /* Чтобы под картинкой не было пустоты */
+    }
+
+    /* 2. Картинка — растягивается на весь контейнер */
+    .full-start-new__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100% !important; /* Занимает все 70vh контейнера */
+        object-fit: cover;
+        border-radius: 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        z-index: 1;
+    }
+
+    /* 3. Фильтр — теперь он всегда ТАКОГО ЖЕ РАЗМЕРА, как картинка */
+    .full-start-new__poster::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Теперь 100% — это те же самые 70vh */
+        z-index: 2;
+        pointer-events: none;
+        
+        background: 
+            /* Нижний градиент (черный туман снизу) */
+            linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 25%),
+            /* Верхний градиент (черный туман сверху) */
+            linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 25%);
+    }
+
 }
 .full-start-new__head {
   color: rgba(255, 255, 255, 0.6);
@@ -9975,7 +10003,7 @@ body.platform--netcast .torrent-item__ffprobe > div::before {
   margin-top: 3em;
 }
 .feed-item__tags::before {
-  content: url(../img/icons/menu/bookmark.svg);
+  content: url(../img/icons/menu/backfill.svg);
   width: 1em;
   height: 1em;
   height: 1.2em;
@@ -14460,3 +14488,23 @@ body.glass--style.platform--browser .card-watched__item:nth-child(5), body.glass
           backdrop-filter: blur(1em);
 /* Проверьте, есть ли у .menu__list свойство display: flex; */
 
+@media screen and (max-width: 480px) {
+    /* Нацеливаемся на все возможные классы изображения */
+    .full-start-new__img, 
+    .full--poster,
+    .full-start-new__poster {
+        /* Убираем закругление */
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+    }
+    .full-start-new__right{
+       border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        background-color: #000;
+    }
+    .full--poster{
+      
+    }
+}
