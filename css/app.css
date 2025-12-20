@@ -16575,7 +16575,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-    background-color: #000;
+    background-color: transparent;
   }
 
   img:not([src]) {
