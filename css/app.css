@@ -3207,7 +3207,7 @@ body.settings--open .settings__layer {
 .items-line--type-top .items-cards .card:nth-child(1),
 .items-line--type-top .items-cards .card:nth-child(2),
 .items-line--type-top .items-cards .card:nth-child(3) {
-  margin-left: 2em;
+  margin-left: 3em;
 }
 
 .items-line--type-top .items-cards .card:nth-child(1)::before,
