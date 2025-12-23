@@ -3207,7 +3207,7 @@ body.settings--open .settings__layer {
 .items-line--type-top .items-cards .card:nth-child(1),
 .items-line--type-top .items-cards .card:nth-child(2),
 .items-line--type-top .items-cards .card:nth-child(3) {
-  margin-left: 6em;
+  margin-left: 2em;
 }
 
 .items-line--type-top .items-cards .card:nth-child(1)::before,
@@ -3215,31 +3215,45 @@ body.settings--open .settings__layer {
 .items-line--type-top .items-cards .card:nth-child(3)::before {
   content: "1";
   position: absolute;
-  top: 0.2em;
-  right: 84%;
-  font-size: 16em;
-  color: #090909;
+  top: 0.56em;
+  right: 87%;
+  font-size: 11em;
+  font-family: 'Oswald', sans-serif;
+  color: #000000;
   font-weight: 900;
-  -webkit-text-stroke: 0.01em #ffffff;
-  z-index: -1;
+  -webkit-text-stroke: 0.05em #ffffff;
+  text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
+.items-line--type-top .items-cards .card:nth-child(1) {
+  fill: black;
+  stroke: white;
+  paint-order: stroke fill;
+}
 .items-line--type-top .items-cards .card:nth-child(2) {
-  margin-left: 4.5em;
+  margin-left: 3em;
+  fill: black;
+  stroke: white;
+  paint-order: stroke fill;
 }
 
 .items-line--type-top .items-cards .card:nth-child(2)::before {
   content: "2";
-  right: 74%;
+  right: 75%;
 }
 
 .items-line--type-top .items-cards .card:nth-child(3) {
-  margin-left: 3.7em;
+  margin-left: 3em;
+  fill: black; /* Цвет цифры (должен совпадать с фоном, чтобы казалось, что это контур) */
+  stroke: white; /* Цвет обводки */
+  
+  paint-order: stroke fill; /* Сначала рисуем обводку, сверху — заливку */
 }
 
 .items-line--type-top .items-cards .card:nth-child(3)::before {
   content: "3";
-  right: 82%;
+  right: 75%;
 }
 
 .items-cards {
@@ -3408,7 +3422,7 @@ body.settings--open .settings__layer {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #3E3E3E;
+  background-color: transparent;
 }
 
 .card__view {
@@ -3437,7 +3451,7 @@ body.settings--open .settings__layer {
 
 .card__icons {
   position: absolute;
-  top: 0.9em;
+  top: 8.5em;
   left: 0;
   right: 0;
   display: -webkit-box;
@@ -3453,10 +3467,19 @@ body.settings--open .settings__layer {
 }
 
 .card__icons-inner {
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 5em;
-  -moz-border-radius: 5em;
-  border-radius: 5em;
+ background: rgba(20, 20, 20, 0.4); 
+  /* Эффект линзы: сильное размытие + сатурация + наш SVG фильтр */
+  backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+  
+  /* Спекулярный блик (Rim Light) по краям */
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+              
+  
+  
+  border-radius: 0.4em; /* Современный "мягкий" радиус */
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -3604,17 +3627,27 @@ body.settings--open .settings__layer {
   font-weight: 300;
 }
 
-.card__type {
-  position: absolute;
-  left: -0.8em;
-  top: 1.4em;
-  padding: 0.4em 0.4em;
-  background: #fff;
-  color: #000;
-  font-size: 0.8em;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  border-radius: 0.3em;
+.card__type { 
+  position: absolute; 
+  left: -0.6em;
+  top: 1.4em; 
+  display: flex; 
+  align-items: center; 
+  padding: 3px 10px 3px 30px;
+   
+  background: rgba(28, 28, 30, 0.6);  
+  backdrop-filter: blur(20px) saturate(180%); 
+  -webkit-backdrop-filter: blur(20px) saturate(180%); 
+   
+  border: 0.5px solid rgba(255, 255, 255, 0.15); 
+  border-radius: 4px; 
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6); 
+   
+  color: #fff; 
+  font-size: 0.75em; 
+  font-weight: 800; 
+  text-transform: lowercase;  
+  letter-spacing: -0.2px; 
 }
 
 .card__new-episode {
@@ -3651,17 +3684,22 @@ body.settings--open .settings__layer {
 
 .card__vote {
   position: absolute;
-  right: 0.3em;
-  bottom: 0.3em;
-  background: rgba(0, 0, 0, 0.5);
+  right: 10px;
+  bottom: 10px;
+  background: rgba(20, 20, 20, 0.4); 
+  /* Эффект линзы: сильное размытие + сатурация + наш SVG фильтр */
+  backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+  
+  /* Спекулярный блик (Rim Light) по краям */
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+              
   color: #fff;
-  font-size: 1.3em;
   font-weight: 700;
-  font-weight: 700;
-  padding: 0.2em 0.5em;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
+  padding: 4px 12px;
+  border-radius: 6px; /* Современный "мягкий" радиус */
 }
 
 .card__textbox {
@@ -3716,10 +3754,42 @@ body.settings--open .settings__layer {
   min-height: 19em;
 }
 
-.card--tv .card__type {
-  background: #ff4242;
-  color: #fff;
+.card--tv .card__type { 
+  position: absolute; 
+  left: -0.8em;
+  top: 1.4em; 
+  display: flex; 
+  align-items: center; 
+  padding: 0.25em 0.420em 0.25em 2.15em;
+  background: linear-gradient(135deg, #000000 0%, #000000 100%); 
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border: 0.15625em solid rgb(192, 192, 192); 
+  border-radius: 0.5em; 
+  color: #cecece !important; 
+  font-size: 0.900em; 
+  font-weight: 900; 
+  text-transform: lowercase;
+  letter-spacing: -0.3px; 
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+} 
+
+.card--tv .card__type::before { 
+  content: ""; 
+  position: absolute; 
+  left: -0.9em; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 4em; 
+  height: 4em; 
+  
+  background-image: url('../img/tv_logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
 }
+
 
 .card--small {
   width: 10.8em;
@@ -5148,7 +5218,7 @@ body.card--no-cover .full-start__background {
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
-  background-color: #fff;
+  background-color: #000000;
   margin-right: 1em;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -7942,7 +8012,7 @@ body.selectbox--open .selectbox__layer {
   -moz-transition: transform 0.3s, border-color 0.2s, -moz-transform 0.3s;
   transition: transform 0.3s, border-color 0.2s;
   transition: transform 0.3s, border-color 0.2s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s;
-  background-color: #3E3E3E;
+  background: linear-gradient(319deg, #0c0c0c 20%, #2d2d2d 100%) !important;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
