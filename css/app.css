@@ -3157,7 +3157,7 @@ body.settings--open .settings__layer {
 
 .items-line__title {
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .items-line__title .full-person__photo {
@@ -3174,9 +3174,10 @@ body.settings--open .settings__layer {
   padding: 0.4em 1em;
   background-color: #fff;
   color: #000;
+  font-weight: 640;
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
-  border-radius: 2em;
+  border-radius: 0.8em;
 }
 
 .items-line__more.focus {
@@ -3204,6 +3205,12 @@ body.settings--open .settings__layer {
   padding: 0 1em;
 }
 
+.items-line--type-top .items-cards .card:nth-child(1) .card__quality,
+.items-line--type-top .items-cards .card:nth-child(2) .card__quality,
+.items-line--type-top .items-cards .card:nth-child(3) .card__quality {
+    display: none;
+}
+
 .items-line--type-top .items-cards .card:nth-child(1),
 .items-line--type-top .items-cards .card:nth-child(2),
 .items-line--type-top .items-cards .card:nth-child(3) {
@@ -3215,7 +3222,7 @@ body.settings--open .settings__layer {
 .items-line--type-top .items-cards .card:nth-child(3)::before {
   content: "1";
   position: absolute;
-  top: 0.56em;
+  top: 0.63em;
   right: 87%;
   font-size: 11em;
   font-family: 'Oswald', sans-serif;
@@ -3670,36 +3677,39 @@ body.settings--open .settings__layer {
 
 .card__quality {
   position: absolute;
-  left: -0.8em;
+  left: -0.9em;
   bottom: 3em;
   padding: 0.4em 0.4em;
-  background: #fbc62a;
+  background: #ffffff;
   color: #000;
   font-size: 0.8em;
+  font-weight: 900;
+  text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   border-radius: 0.3em;
   text-transform: uppercase;
 }
 
+
 .card__vote {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background: rgba(20, 20, 20, 0.4); 
-  /* Эффект линзы: сильное размытие + сатурация + наш SVG фильтр */
-  backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+    position: absolute;
+    /* Расчет: 10px / 16px = 0.625em */
+    right: 0.625em;
+    bottom: 0.625em;
+    
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
   -webkit-backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
-  
-  /* Спекулярный блик (Rim Light) по краям */
-  border: 0.5px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
-              inset 0 1px 1px rgba(255, 255, 255, 0.1);
-              
-  color: #fff;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 6px; /* Современный "мягкий" радиус */
+    color: #fff;
+    font-weight: 800;
+    padding: 0.4em 0.6em; 
+    border-radius: 0.5em; 
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.5);
+    border:0.15625em solid rgb(192, 192, 192)
 }
 
 .card__textbox {
