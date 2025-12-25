@@ -3770,7 +3770,7 @@ body.settings--open .settings__layer {
   top: 1.4em; 
   display: flex; 
   align-items: center; 
-  padding: 0.25em 0.420em 0.25em 2.15em;
+  padding: 0.3em 0.420em 0.25em 2.15em;
   background: linear-gradient(135deg, #000000 0%, #000000 100%); 
   border-top: 1px solid rgba(0, 0, 0, 0.4);
   border: 0.15625em solid rgb(192, 192, 192); 
