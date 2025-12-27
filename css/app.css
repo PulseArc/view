@@ -1087,9 +1087,7 @@ body:not(.glass--style).keyboard-input--visible .head {
 }
 
 .navigation-bar__body {
-  -webkit-border-radius: 1.4em;
-  -moz-border-radius: 1.4em;
-  border-radius: 1.4em;
+
   background: #000000;
   padding: 1.5em;
   display: -webkit-box;
@@ -1128,6 +1126,7 @@ body.true--mobile .navigation-bar {
   display: block;
 }
 
+
 body.true--mobile.orientation--landscape .navigation-bar {
   top: 0;
   left: auto;
@@ -1136,10 +1135,29 @@ body.true--mobile.orientation--landscape .navigation-bar {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1.5em;
   padding-left: 0;
+  
 }
-
+body.true--mobile.orientation--landscape .navigation-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  /* Увеличиваем ширину, чтобы маска заходила НА навбар */
+  left: -2em; 
+  width: 3em; /* Было 2em, стало 3em — теперь 1em ложится сверху на навбар */
+  height: 100%;
+  
+  /* Делаем градиент длиннее, чтобы чистый черный начинался заранее */
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 60%, /* Полная чернота наступает до конца маски */
+    rgba(0, 0, 0, 1) 100%
+  );
+  
+  pointer-events: none;
+ 
+}
 body.true--mobile.orientation--landscape .navigation-bar .navigation-bar__body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1934,15 +1952,21 @@ body.true--mobile .head__logo-icon {
 }
 
 body.true--mobile .head__actions {
-  margin-top: 0.45em;
-  background-color: #E0E0E0;
-  background: linear-gradient(180deg, #2E2E2E 0%, #424242 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  padding: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Увеличиваем паддинг до 0.6em, чтобы кнопкам 3em было не тесно */
+  padding: 0.5em; 
+  margin-top: 0.45em;
+  
+  /* Оставляем твой градиент, но добавим четкости форме */
+  background: linear-gradient(180deg, #2E2E2E 0%, #424242 100%);
+  
+  /* Скругление делаем больше, чтобы оно обтекало круглые иконки */
+  border-radius: 2.5em; 
+  
+  /* Делаем тень более глубокой, раз кнопки такие тяжелые (черные) */
+  box-shadow: 0 0.8em 2em rgba(0, 0, 0, 0.6);
 }
 
 body.true--mobile .head__action {
@@ -1951,11 +1975,16 @@ body.true--mobile .head__action {
   height: 3em;
   width: 3em;
   background-color: #000000;
-
+  
+  /* Обязательно добавляем, чтобы иконка была круглой и по центру */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body.true--mobile.orientation--landscape .head .head__body {
-  padding-right: 10em;
+  padding-right: 8em;
 }
 
 .processing {
@@ -2299,7 +2328,7 @@ body.true--mobile.orientation--landscape .head .head__body {
 
 .menu__text {
   font-size: 1.4em;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 0.8;
   margin-top: -0.1em;
 }
@@ -3439,6 +3468,7 @@ body.settings--open .settings__layer {
 }
 
 .card__title {
+  font-weight: 600;
   font-size: 1.3em;
   max-height: 3.6em;
   overflow: hidden;
@@ -3452,6 +3482,7 @@ body.settings--open .settings__layer {
 }
 
 .card__age {
+  font-weight: 400;
   font-size: 0.9em;
   margin-top: 0.6em;
 }
@@ -3474,11 +3505,9 @@ body.settings--open .settings__layer {
 }
 
 .card__icons-inner {
- background: rgba(20, 20, 20, 0.4); 
+ background: linear-gradient(135deg, rgba(40, 40, 40, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   /* Эффект линзы: сильное размытие + сатурация + наш SVG фильтр */
-  backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
-  -webkit-backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
-  
+
   /* Спекулярный блик (Rim Light) по краям */
   border: 0.5px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
@@ -3643,9 +3672,7 @@ body.settings--open .settings__layer {
   padding: 3px 10px 3px 30px;
    
   background: rgba(28, 28, 30, 0.6);  
-  backdrop-filter: blur(20px) saturate(180%); 
-  -webkit-backdrop-filter: blur(20px) saturate(180%); 
-   
+
   border: 0.5px solid rgba(255, 255, 255, 0.15); 
   border-radius: 4px; 
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6); 
@@ -3701,9 +3728,8 @@ body.settings--open .settings__layer {
     right: 0.625em;
     bottom: 0.625em;
     
-    background: rgba(20, 20, 20, 0.4);
-    backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
-  -webkit-backdrop-filter: blur(20px) saturate(180%) url(#liquid-refraction);
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+   
     color: #fff;
     font-weight: 800;
     padding: 0.4em 0.6em; 
@@ -8037,7 +8063,7 @@ body.selectbox--open .selectbox__layer {
   right: 0;
   text-align: center;
   font-size: 1.8em;
-  font-weight: 300;
+  font-weight: 500;
   margin-top: -0.7em;
 }
 
@@ -16458,9 +16484,8 @@ body.glass--style .settings-input--free,
 body.glass--style .navigation-bar__body,
 body.glass--style .discuss-rules,
 body.glass--style .bell__item {
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(1.6em);
-  backdrop-filter: blur(1.6em);
+  background-color: black;
+
 }
 
 @media screen and (max-width: 480px) {
@@ -16662,4 +16687,4 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     visibility: hidden;
   }
   
-}
+}/* 1. Отключаем самое тяжелое — фильтры и размытие внутри карточек */
