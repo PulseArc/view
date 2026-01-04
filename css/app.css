@@ -308,6 +308,12 @@ body.black--style {
     background-color: #000 !important;
   }
 }
+@media screen and (max-width: 480px) {
+
+.full-start-new{
+  padding-bottom: 2em !important;
+}
+}
 
 img {
   vertical-align: middle;
@@ -1243,6 +1249,7 @@ body.true--mobile .wrap__left {
 
 .wrap__left .scroll--mask .scroll__content {
   padding: 1.9em 0;
+  
 }
 
 .wrap__left--hidden {
@@ -2777,7 +2784,7 @@ body.light--version .menu__item {
 
 .settings__title {
   font-size: 2.2em;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .settings-folder {
@@ -2812,6 +2819,7 @@ body.light--version .menu__item {
 .settings-folder__name {
   font-size: 1.4em;
   line-height: 1.3;
+  font-weight: 400;
 }
 
 .settings-folder.focus {
@@ -3415,7 +3423,7 @@ background: #1a1a1a;
 border-color: #fff;
 }
 .register {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #141414;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
@@ -4201,11 +4209,12 @@ border-color: #fff;
 .full-start__pg,
 .full-start__status {
   font-size: 1.2em;
-  border: 1px solid #fff;
+  border: 0.08em solid #fff;
   -webkit-border-radius: 0.2em;
   -moz-border-radius: 0.2em;
   border-radius: 0.2em;
   padding: 0.3em;
+  box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.5);
 }
 
 .full-start__body {
@@ -4561,7 +4570,7 @@ border-color: #fff;
     display: none !important;
 
 }
-.full-start__button.button--reaction span {
+.full-start__button.button--share span {
     display: none !important;
 
 }
@@ -4593,7 +4602,9 @@ border-color: #fff;
 }
 
 .full-start__rate {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.525);
+  box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.5);
+  font-weight: 550;
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   border-radius: 0.3em;
@@ -4617,7 +4628,9 @@ border-color: #fff;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.15);
+  color: #000;
+  font-weight: 550;
+  background: rgba(255, 255, 255, 0.956);
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   border-radius: 0.3em;
@@ -7623,7 +7636,7 @@ body.glass--style.platform--android .player-footer {
 
 .selectbox__title {
   font-size: 2.2em;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .selectbox__text {
@@ -7655,6 +7668,7 @@ body.selectbox--open .selectbox__layer {
   padding: 1.5em 2em;
   position: relative;
   will-change: transform;
+  font-weight: 400;
 }
 
 .selectbox-item__title {
@@ -12033,7 +12047,7 @@ body.platform--netcast .torrent-item__ffprobe>div::before {
 }
 
 .bookmarks-folder__title {
-  font-weight: 300;
+  font-weight: 350;
   font-size: 1.5em;
 }
 
@@ -12742,8 +12756,10 @@ body.system--keyboard .search-box .simple-keyboard-input {
   right: 0;
   bottom: 0;
   z-index: 99;
-  background: #65eaa7;
+  background: #fff;
+  border-radius: 0.75em 0.75em 0 0;
   color: #000;
+  font-weight: 650;
   -webkit-transform: translateY(100%);
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -16581,7 +16597,7 @@ body.glass--style .torrent-serial.focus {
 
 body.glass--style .card-more__box,
 body.glass--style .bookmarks-folder__layer {
-  background: rgba(0, 0, 0, 0.3);
+  background: #141414;
 }
 
 body.glass--style-opacity--medium .selectbox__content,
