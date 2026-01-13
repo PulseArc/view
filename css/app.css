@@ -4550,7 +4550,7 @@ border-color: #fff;
   background: #2a2a2a; /* Глубокий матовый черный */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 
               inset 0 1px 1px rgba(255, 255, 255, 0.05); /* Едва заметный блик сверху */
-  border-radius: 1.5em;
+  border-radius: 1em;
   
   color: #efefef;
   transition: background 0.2s;
@@ -16759,4 +16759,450 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
   }
   
 }/* 1. Отключаем самое тяжелое — фильтры и размытие внутри карточек */
+/* Контейнер баннера */
+/* Делаем стандартный Head прозрачным, когда баннер на экране */
+/* В Lampa класс шапки обычно .head или .header */
+/* Делаем стандартный Head прозрачным, когда баннер на экране */
+/* В Lampa класс шапки обычно .head или .header */
+.head {
+    background: transparent !important;
+    transition: background 0.3s ease;
+}
 
+/* Если мы скроллим вниз и баннер уходит, фон шапки должен возвращаться.
+   Для этого Lampa обычно добавляет класс .state--scrolled к body или activity */
+.state--scrolled .head {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+/* Основной контейнер баннера */
+.selected-banner-row {
+    width: 96%;
+    height: 38em;
+    margin: 0.5em 2em 2em;
+    background: #1a1a1a;
+    position: relative;
+    border-radius: 1.2em;
+    overflow: hidden;
+    display: block !important;
+}
+.selected-banner-row::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Накладываем несколько градиентов: сверху, снизу и по бокам */
+    background: 
+        linear-gradient(to right, #000 0%, transparent 15%, transparent 85%, #000 100%),
+        linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%);
+    z-index: 2; 
+    pointer-events: none;
+}
+/* Фон баннера */
+.selected-banner__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0.4;
+    z-index: 1;filter: blur(4px); 
+    /* Увеличиваем размер, чтобы скрыть "грязные" края после размытия */
+    transform: scale(1.05);
+    transition: background-image 0.7s ease-in-out;
+    /* Плавное исчезновение по бокам */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+
+
+/* Постер фильма/контента */
+.selected-banner__poster {
+    width: 16em;
+    height: 23em;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.8em;
+    margin-right: 3em;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Текстовый блок */
+.selected-banner__text {
+    color: #fff;
+    flex: 1;
+    text-align: left;
+}
+
+.selected-banner__title {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.selected-banner__descr {
+    font-size: 1.4em;
+    line-height: 1.4;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 2em;
+    max-width: 80%;
+}
+
+/* Кнопка "Подробнее" */
+.selected-banner__btn {
+    display: inline-block;
+    padding: 1.2em 2.8em;
+    background: #fff;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selected-banner__btn.focus {
+    transform: scale(1.1);
+    background: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Адаптация для мобильных устройств (< 767px) */
+@media screen and (max-width: 767px) {
+    .selected-banner-row {
+        
+        transform: translateY(-8em) !important;
+        margin-bottom: -6.5em !important;
+    }
+
+    .selected-banner__text {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .selected-banner__btn {
+       
+        padding: 1.5em;
+        font-size: 1.4em;
+        text-align: center;
+    }
+}
+
+
+/* Настройка баннера */
+.selected-banner-row {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    display: block !important;
+    
+    /* Сдвигаем баннер под Head */
+    /* Обычно высота шапки в Lampa около 5em - 7em */
+    margin-top: -5em !important; 
+    padding-top: 5em !important; /* Компенсируем отступ внутри, чтобы текст не залез под кнопки шапки */
+}
+
+/* ТВ И БОЛЬШИЕ ЭКРАНЫ */
+@media screen and (min-width: 768px) {
+    
+    .selected-banner__background {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-size: cover;
+        background-position: center top;
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        z-index: 1;
+    }
+    .selected-banner__background.loaded { opacity: 1; }
+    .selected-banner__image { display: none !important; }
+}
+
+
+/*  *//* Основной контейнер баннера */
+.selected-banner-row {
+    width: 96%;
+    height: 38em;
+    margin: 0.5em 2% 2em;
+   
+    position: relative;
+    border-radius: 1.2em;
+    overflow: hidden;
+    display: block !important;
+}
+
+/* Фон баннера */
+.selected-banner__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0.4;
+    z-index: 1;filter: blur(4px); 
+    /* Увеличиваем размер, чтобы скрыть "грязные" края после размытия */
+    transform: scale(1.05);
+    transition: background-image 0.7s ease-in-out;
+    /* Плавное исчезновение по бокам */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+/* Слой с информацией */
+.selected-banner__info {
+    position: absolute;
+    top: 5em; /* Возвращаем на место */
+    bottom: 0;
+    left: 0;
+    padding: 4em 4em 13em 4em; /* Увеличиваем нижний отступ (padding-bottom), чтобы поднять контент */
+    z-index: 10;
+    width: 100%;
+    display: flex !important;
+    align-items: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Постер фильма/контента */
+.selected-banner__poster {
+    width: 16em;
+    height: 23em;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.8em;
+    margin-right: 3em;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Текстовый блок */
+.selected-banner__text {
+    color: #fff;
+    flex: 1;
+    text-align: left;
+}
+
+.selected-banner__title {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.selected-banner__descr {
+    font-size: 1.4em;
+    line-height: 1.4;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 2em;
+    max-width: 80%;
+}
+
+/* Кнопка "Подробнее" */
+.selected-banner__btn {
+    display: inline-block;
+    padding: 1.2em 2.8em;
+    background: #fff;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selected-banner__btn.focus {
+    transform: scale(1.1);
+    background: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Адаптация для мобильных устройств (< 767px) */
+@media screen and (max-width: 767px) {
+  
+    .selected-banner-row {
+        
+        transform: translateY(-8em) !important;
+        margin-bottom: -6.5em !important;
+    }
+
+    .selected-banner__info {
+      top: 1em;
+        padding: 0 0 8vh 0;
+        justify-content: center;
+        background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+        
+    }
+
+ 
+}
+.items-line:has(.selected-banner-row.is-mobile-banner) .items-line__head {
+        margin-bottom: -2em !important;
+    }
+
+@media screen and (max-width: 480px) {
+  .selected-banner-row::after {
+    display: none;
+    
+    
+}
+    /* Переопределяем overflow для .scroll когда баннер активен */
+    .selected-banner__info {
+      top: 1em;
+        padding: 4em 3em 8vh 4em;
+        justify-content: center;
+        background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+        
+    }
+    
+    /* Убираем отступ снизу у заголовка когда баннер активен */
+    .items-line:has(.selected-banner-row.is-mobile-banner) .items-line__head {
+        margin-bottom: -2em !important;
+    }
+    
+    /* Контейнер баннера на весь экран */
+    .selected-banner-row.is-mobile-banner {
+        width: 100vw !important;
+        height: 90vh !important;
+        min-height: 90vh !important;
+        max-height: 100vh !important;
+        margin: 0 !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+        margin-bottom: -9em !important;
+        left: 50% !important;
+        right: 50% !important;
+        padding: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
+        background: #000 !important;
+        border-radius: 0 !important;
+    }
+    
+    /* Изображение постера на весь экран */
+    .banner-fullscreen-img {
+        width: 100vw !important;
+        height: 90vh !important;
+        min-height: 90vh !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 1 !important;
+        display: block !important;
+    }
+    
+   .selected-banner-row.is-mobile-banner::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 30% !important;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%) !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+    }
+    
+    .selected-banner-row.is-mobile-banner::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 50% !important;
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.3) 40%, transparent 100%) !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Скрываем всю информацию на мобильных */
+    .is-mobile-banner .selected-banner__info {
+        
+    }
+
+@media screen and (max-width: 480px) {
+    .banner-slider {
+        /* Больше времени, но за счет кривой кажется быстрее */
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    }
+}
+}/* Разрешаем вылет фона за пределы строки */
+.items-line:has(.selected-banner-row) {
+    overflow: visible !important;
+}
+
+.items-line:has(.selected-banner-row) .items-line__body,
+.items-line:has(.selected-banner-row) .scroll,
+.items-line:has(.selected-banner-row) .scroll__content,
+.items-line:has(.selected-banner-row) .scroll__body {
+    overflow: visible !important;
+    height: auto !important; /* Убираем фиксированную высоту Lampa */
+}
+/* Статичная обертка для контента */
+.banner-main-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Контейнер слайдера */
+.banner-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Направления анимации */
+.banner-slider.sliding-left { transform: translateX(-100%); }
+.banner-slider.sliding-right { transform: translateX(100%); }
+
+.banner-slide-left { position: absolute; left: 100%; }
+.banner-slide-right { position: absolute; left: -100%; }
+
+/* Обеспечиваем, что тени (::after) всегда поверх всего */
+.selected-banner-row::after {
+    z-index: 10 !important;
+}
+
+/* Убираем прыжки фона */
+.selected-banner__bg {
+    height: 100% !important;
+    top: 0 !important;
+    position: absolute !important;
+}
