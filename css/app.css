@@ -17043,14 +17043,19 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     }
 
     .selected-banner__info {
-      top: 1em;
+      top: 0em;
         padding: 0 0 8vh 0;
         justify-content: center;
         background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
         
     }
-
- 
+.banner-dots-container{
+  bottom: -0.4em !important;
+  
+}
+ .selected-banner__genres{
+  margin-bottom: 2em !important;
+ }
 }
 
 .items-line:has(.selected-banner-row.is-mobile-banner) .items-line__head {
@@ -17064,13 +17069,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     
 }
     /* Переопределяем overflow для .scroll когда баннер активен */
-    .selected-banner__info {
-      top: 1em;
-        padding: 4em 3em 14vh 4em;
-        justify-content: center;
-        background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
-        
-    }
+
     
     /* Убираем отступ снизу у заголовка когда баннер активен */
     .items-line:has(.selected-banner-row.is-mobile-banner) .items-line__head {
@@ -17137,10 +17136,6 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
         pointer-events: none !important;
     }
     
-    /* Скрываем всю информацию на мобильных */
-    .is-mobile-banner .selected-banner__info {
-        
-    }
 
 @media screen and (max-width: 480px) {
     .banner-slider {
@@ -17267,7 +17262,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 @media screen and (max-width: 480px) {
   .banner-dots-container {
     
-    bottom: 6vh; /* Твоя высота от низа */
+    bottom: 7.5vh !important; /* Твоя высота от низа */
    
 }
    .banner-dot {
@@ -17278,7 +17273,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     min-height: 0.75em !important;
 }
 .banner-dots {
-    max-width: 13.5em;      /* Но не растет больше 8 позиций */
+    max-width: 13.5em; /* Но не растет больше 8 позиций */
 }
 }
 /* Твои стили состояний */
@@ -17302,36 +17297,239 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     transform: scale(0); 
     opacity: 0; 
 }
-@media screen and (max-width: 480px) {
-    /* Контейнер для слайда */
-    .banner-slide-unit {
-        position: relative;
-        overflow: hidden;
-    }
+/* Эффект Apple TV для мобильных устройств */
+.is-mobile-banner .banner-slide-unit::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%; /* Высокая дымка */
+    z-index: 2; /* Поверх блюра */
+    pointer-events: none;
+    background: linear-gradient(to top, 
+        #000 0%,            /* Абсолютно черный низ */
+        rgba(0,0,0,0.8) 35%, /* Плотное затемнение */
+        rgba(0,0,0,0.4) 70%, /* Плавное исчезновение дымки */
+        transparent 100%
+    );
+}
+.is-mobile-banner .banner-slide-unit::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* Высота слоя (увеличили, чтобы блюр начинался выше текста) */
+    height: 90%; 
+    z-index: 1;
+    pointer-events: none;
+    
+    /* Сила размытия в самой нижней точке */
+    -webkit-backdrop-filter: blur(25px) saturate(130%);
+    backdrop-filter: blur(25px) saturate(130%);
+    
+    /* ГРАДИЕНТНАЯ МАСКА: управляет тем, ГДЕ и КАК сильно размыто */
+    /* transparent — нет блюра, black — 100% блюра */
+    -webkit-mask-image: linear-gradient(to bottom, 
+        transparent 0%,      /* В самом верху слоя размытия нет */
+        rgba(0,0,0,0.1) 20%, /* Начинается очень легкое, едва заметное размытие */
+        rgba(0,0,0,0.5) 60%, /* Плавное усиление над текстом */
+        black 80%            /* В зоне текста и ниже — максимальный блюр */
+    );
+    mask-image: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(0,0,0,0.1) 10%, 
+        rgba(0,0,0,0.5) 60%, 
+        black 80%
+    );
+    -webkit-transform: translateZ(0); /* Принудительный запуск аппаратного ускорения */
+    transform: translateZ(0);
+    
+    /* Убираем мерцание при перерисовке */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    /* Помогает Safari понять, что блюр не должен меняться при движении родителя */
+    will-change: backdrop-filter, -webkit-backdrop-filter;
+}
 
-    /* Тот самый слой размытия */
-    .banner-blur-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 60%; /* Высота зоны размытия (от низа) */
-        z-index: 2;
-        
-        /* Эффект матового стекла */
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+/* Затемнение фона под текстом для читаемости (Apple TV Style) */
+.is-mobile-banner .selected-banner__info {
+    z-index: 2;
+    position: relative;
+    /* Усиливаем темный градиент в самом низу */
+ 
+}
+.is-mobile-banner .banner-fullscreen-img {
+    /* Увеличиваем масштаб, чтобы обрезать края, где обычно пишут текст */
+    transform: scale(1.15); 
+    /* Смещаем картинку чуть вверх, чтобы текст снизу ушел в зону размытия */
+    object-position: center 10%; 
+    filter: brightness(0.9); /* Немного приглушаем яркость для премиального вида */
+    transition: transform 0.5s ease;
+    -webkit-transform: scale(1.15) translateZ(0);
+    transform: scale(1.15) translateZ(0);
+    will-change: transform;
+}
 
-        /* Градиентная маска: сверху прозрачно (нет блюра), снизу черный (полный блюр) */
-        mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
-        
-        pointer-events: none; /* Чтобы слой не мешал кликам */
-    }
+/* Убеждаемся, что контейнер не выпускает увеличенную картинку за границы */
+.is-mobile-banner .banner-slide-unit {
+    overflow: hidden;
+}/* Центрируем основной контейнер информации */
+.is-mobile-banner .selected-banner__info {
+  top: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центровка по горизонтали */
+    justify-content: flex-end; /* Прижимаем текст к нижней части (к блюру) */
+    text-align: center; /* Центровка текста внутри */
+    padding: 4em 2em 6vh 2em; /* Оптимизируем отступы */
+    width: 100%;
+    left: 0;
+}
 
-    /* Поднимаем информацию выше слоя размытия */
-    .selected-banner__info {
-        position: relative;
-        z-index: 3;
+/* Центрируем текстовый блок */
+.is-mobile-banner .selected-banner__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+/* Название фильма */
+.is-mobile-banner .selected-banner__title {
+    font-size: 2.2em; /* Немного уменьшили для мобилок, чтобы не ломало строки */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+}
+
+/* Описание фильма */
+.is-mobile-banner .selected-banner__descr {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%; /* Даем больше места, но центрируем */
+    text-align: center;
+}
+
+/* Контейнер кнопок (если их будет несколько) */
+.is-mobile-banner .selected-banner__actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+/* Кнопка "Подробнее" */
+.is-mobile-banner .selected-banner__btn {
+    margin: 0 auto;
+    padding: 1em 3.5em; /* Делаем кнопку чуть шире и солиднее */
+    transform: none; /* Убираем возможные смещения */
+}
+/* Общий стиль для жанров (применится и к ПК) */
+.selected-banner__genres {
+    font-size: 1.1em;
+    color: #fff;
+    opacity: 0.7; /* На ПК лучше сделать чуть приглушеннее */
+    margin-bottom: 2.0em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* Специфичные правки для ПК, если текст там выровнен по левому краю */
+@media screen and (min-width: 481px) {
+  .selected-banner__descr {
+        margin-bottom: 1.5em; /* Уменьшили с 2em до 0.8em */
     }
+    .selected-banner__text {
+        text-align: left; /* Обычно на ПК текст слева */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .selected-banner__genres {
+        text-align: left;
+        width: auto;
+    }
+}
+.is-mobile-banner .selected-banner__genres {
+    font-size: 1.1em;
+    color: #fff;
+    opacity: 0.9;
+    font-weight: 500;
+    margin-bottom: 1.5em; /* Отступ до кнопки */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    width: 100%;
+    text-align: center;
+}/* Для контейнера, который движется */
+.is-mobile-banner .banner-slider-strip {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Для блока с блюром и текстом */
+.is-mobile-banner .selected-banner__info {
+    /* Принудительно выносим в отдельный композитный слой */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    
+    /* Убираем мерцание при перерисовке фильтра */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    /* Ускоряем рендеринг фильтра */
+    will-change: backdrop-filter, -webkit-backdrop-filter, opacity;
+}
+
+/* Для самой картинки */
+.is-mobile-banner .banner-fullscreen-img {
+    -webkit-transform: scale(1.15) translateZ(0);
+    transform: scale(1.15) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}/* Новая дымка (вместо ::before) */
+.is-mobile-banner .shadow-overlay {
+    position: absolute;
+    left: -1px; /* Слегка расширяем по бокам */
+    right: -1px;
+    bottom: -2px; /* Увеличиваем нахлест снизу */
+    width: calc(100% + 2px); 
+    height: 28%; /* Чуть увеличиваем высоту для запаса */
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to top, 
+        #000 0%, 
+        rgba(0,0,0,0.85) 30%, 
+        rgba(0,0,0,0.4) 65%, 
+        transparent 100%
+    );
+
+    /* Добавляем scaleY, чтобы градиент "впился" в нижнюю границу */
+    -webkit-transform: translateZ(1px) scaleY(1.05);
+    transform: translateZ(1px) scaleY(1.05);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+}
+
+/* Также фиксим сам блок информации, чтобы он не "скакал" поверх дымки */
+.is-mobile-banner .selected-banner__info {
+    z-index: 3;
+    -webkit-transform: translateZ(2px);
+    transform: translateZ(2px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+/* Удаляем старую дымку из ::before, чтобы они не накладывались */
+.is-mobile-banner .banner-slide-unit::before {
+    display: none !important;
 }
