@@ -17532,4 +17532,6 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 /* Удаляем старую дымку из ::before, чтобы они не накладывались */
 .is-mobile-banner .banner-slide-unit::before {
     display: none !important;
+}.search__input{
+  display: none;
 }
