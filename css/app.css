@@ -1201,7 +1201,7 @@ body.ambience--enable .navigation-bar {
   position: relative;
   margin-bottom: 1.8em;
   margin-top: -1.5em;
-  display: none;
+  display: block;
 }
 
 .head-backward__button {
@@ -8892,6 +8892,7 @@ body.true--mobile .search .search-source:not(.active) {
   width: 2.8em;
   height: 2.8em;
   margin-right: 1em;
+  margin-top: 0.3em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -17093,6 +17094,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
         overflow: hidden !important;
         background: #000 !important;
         border-radius: 0 !important;
+        padding-top: 6em !important;
     }
     
     /* Изображение постера на весь экран */
@@ -17260,11 +17262,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     display: block;
 }
 @media screen and (max-width: 480px) {
-  .banner-dots-container {
-    
-    bottom: 7.5vh !important; /* Твоя высота от низа */
-   
-}
+
    .banner-dot {
     /* Твой размер 0.45, который решил проблему овальности */
     width: 0.75em !important;
@@ -17377,27 +17375,70 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 .is-mobile-banner .banner-slide-unit {
     overflow: hidden;
 }/* Центрируем основной контейнер информации */
+
+/* Основной контейнер */
 .is-mobile-banner .selected-banner__info {
-  top: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центровка по горизонтали */
-    justify-content: flex-end; /* Прижимаем текст к нижней части (к блюру) */
-    text-align: center; /* Центровка текста внутри */
-    padding: 4em 2em 6vh 2em; /* Оптимизируем отступы */
-    width: 100%;
-    left: 0;
+    top: 0 !important;
+    height: 90dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding-bottom: calc(13em + env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
 }
 
-/* Центрируем текстовый блок */
+/* Обертка для текста и точек */
 .is-mobile-banner .selected-banner__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    text-align: center;
+    margin-top: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 90% !important;
+    flex: none !important;
 }
 
+@media screen and (max-width: 480px) {
+    /* УБИРАЕМ position: absolute полностью */
+    .banner-dots-container {
+        position: static !important; /* ИЗМЕНЕНО: static вместо absolute */
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 !important;
+         /* Расстояние от кнопки до точек */
+        transform: none !important;
+        pointer-events: auto !important;
+        z-index: 1001 !important;
+        padding: 1em 0 0.5em 0 !important;
+        box-sizing: border-box !important;
+        margin-top: -7em !important;
+        margin-left: 0.5em !important;
+    }
+
+    /* Обнуляем bottom если он был где-то установлен */
+    .banner-dots-container {
+        bottom: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+}
+
+/* Специфично для Safari */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 480px) {
+        .banner-dots-container {
+            margin-top: -8em !important;
+            -webkit-user-select: none !important;
+            position: static !important;
+        }
+    }
+}
 /* Название фильма */
 .is-mobile-banner .selected-banner__title {
     font-size: 2.2em; /* Немного уменьшили для мобилок, чтобы не ломало строки */
