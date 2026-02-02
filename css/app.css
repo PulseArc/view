@@ -17383,7 +17383,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    padding-bottom: calc(13em + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(15em + env(safe-area-inset-bottom)) !important;
     box-sizing: border-box !important;
     position: relative !important;
 }
@@ -17416,7 +17416,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
         z-index: 1001 !important;
         padding: 1em 0 0.5em 0 !important;
         box-sizing: border-box !important;
-        margin-top: -7em !important;
+        margin-top: -7vh !important;
         margin-left: 0.5em !important;
     }
 
@@ -17433,7 +17433,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 @supports (-webkit-touch-callout: none) {
     @media screen and (max-width: 480px) {
         .banner-dots-container {
-            margin-top: -8em !important;
+            margin-top: -7vh !important;
             -webkit-user-select: none !important;
             position: static !important;
         }
