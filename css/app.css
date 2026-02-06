@@ -2975,6 +2975,7 @@ body.light--version .menu__item {
   min-height: 2.3em;
   border-bottom: 2px solid rgba(221, 221, 221, 0.06);
   padding: 0.6em 0;
+  display: none;
 }
 
 .settings-input__input.filled::after {
@@ -8815,13 +8816,15 @@ body.true--mobile .search .search-source:not(.active) {
 
 .simple-keyboard-input {
   background-color: transparent;
-  font-size: 1.6em;
-  height: 2.1em;
   width: 100%;
   border: 0;
-  padding: 0;
   color: #fff;
   font-family: "SegoeUI", sans-serif;
+  font-size: 2.1em;
+  margin-bottom: 1em;
+  min-height: 2.3em;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.06);
+  padding: 0.6em 0;
 }
 
 .simple-keyboard-input::-webkit-input-placeholder {
