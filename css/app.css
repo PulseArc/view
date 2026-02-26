@@ -14366,6 +14366,55 @@ body.system--keyboard .search-box .simple-keyboard-input {
   color: #ffd016;
 }
 
+.extensions__item-status {
+    animation: errorFadeIn 1s forwards;
+}
+
+.extensions__item-included{
+  animation: errorFadeIn 0.9s forwards;
+}
+
+.extensions__item-code.success {
+   animation: errorFadeIn 0.8s forwards;
+}
+.extensions__item-code.error {
+    animation: errorFadeIn 0.8s forwards;
+}
+
+
+
+/* Сама иконка ошибки (твой красный кружок), если она появляется */
+.extensions__item-error {
+    animation: errorFadeIn 0.6s forwards;
+}
+
+/* Общая анимация появления */
+@keyframes errorFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px); /* Небольшой выезд слева направо */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.extensions__item-proto.protocol-http {
+    animation: protoHttpFadeIn 0.9s forwards;
+}
+
+@keyframes protoHttpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 0.3; 
+        transform: translateX(0);
+    }
+}
+
 .extensions__item-error {
   width: 1.2em;
   height: 1.2em;
