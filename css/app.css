@@ -2935,6 +2935,7 @@ body.light--version .menu__item {
   display: -ms-flexbox;
   display: flex;
   z-index: 21;
+  margin-top: -20em;
 }
 
 .settings-input__content {
@@ -3011,6 +3012,7 @@ body.light--version .menu__item {
 .settings-input__title {
   font-size: 2.2em;
   margin-bottom: 0.7em;
+  text-align: center;
 }
 
 .settings-input--free {
@@ -8820,13 +8822,36 @@ body.true--mobile .search .search-source:not(.active) {
   border: 0;
   color: #fff;
   font-family: "SegoeUI", sans-serif;
-  font-size: 2.1em;
+    font-size: 2.0em;
+    height: 2.1em;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    color: #fff;
+}
+.settings-input__content #orsay-keyboard {
+      font-size: 1.8em;
   margin-bottom: 1em;
   min-height: 2.3em;
   border-bottom: 2px solid rgba(221, 221, 221, 0.06);
   padding: 0.6em 0;
+    /* ваши специфичные стили */
+}
+.settings-input__content .simple-keyboard {
+    background-color: #1c1c1c; 
+    border-radius: 12px;       
+    padding: 10px 20px;       
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);   
+    width: 100%;               
+    box-sizing: border-box;
 }
 
+/* Эффект при фокусе (когда пользователь нажимает на инпут) */
+.settings-input__content #orsay-keyboard:focus {
+    border-bottom: 2px solid white; 
+    transition: border-color 0.3s ease;
+}
 .simple-keyboard-input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
