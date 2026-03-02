@@ -1246,11 +1246,14 @@ body.true--mobile .wrap__left {
   position: relative;
   z-index: 10;
 }
-
 .wrap__left {
-    width: 16em;            /* Увеличили ширину */
-    margin-left: -16em;     /* Спрятали на ту же величину влево */
-    
+    /* Это критически важно: позволяем тени выходить за край, 
+       но при этом она остается частью этого же слоя отрисовки */
+    overflow: visible !important;
+}
+.wrap__left {
+    width: 16.5em;            /* Увеличили ширину */
+    margin-left: -16.5em;     /* Спрятали на ту же величину влево */
     padding-top: 4em;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
@@ -1265,14 +1268,47 @@ body.true--mobile .wrap__left {
     transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
     will-change: transform;
 }
+.wrap__left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -40px; 
+    width: 40px; 
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(0,0,0,1) 0%,    
+        rgba(0,0,0,1) 25%,   
+        rgba(0,0,0,0) 100%  
+    );
+    pointer-events: none;
+    z-index: 5;
+}body.menu--open .wrap__left::after {
+    opacity: 1;
+}
 
+/* Когда меню закрывается — добавляем небольшую задержку на исчезновение */
+body:not(.menu--open) .wrap__left::after {
+    opacity: 0;
+    transition-delay: 0.1s;
+}
 .wrap__left .scroll--mask .scroll__content {
   padding: 1.9em 0;
   
 }
 
+
 .wrap__left--hidden {
   visibility: hidden;
+}
+/* Когда меню открыто (на body висит класс menu--open) */
+body.menu--open .wrap__content {
+    transform: translateX(16.5em) !important; 
+}
+
+/* Возвращаем все назад, когда меню закрывается */
+body:not(.menu--open) .wrap__content {
+    transform: translateX(0) !important;
+    width: 100% !important;
 }
 
 .wrap__content {
@@ -1303,23 +1339,25 @@ body.true--mobile .wrap__left {
 }
 
 body.menu--open:not(.light--version) .wrap__left {
-    /* Сдвигаем вправо на всю новую ширину (20em) */
-    -webkit-transform: translate3d(16em, 0, 0);
-    -moz-transform: translate3d(16em, 0, 0);
-    transform: translate3d(16em, 0, 0);
-    background: transparent;
+    -webkit-transform: translate3d(16.5em, 0, 0);
+    -moz-transform: translate3d(16.5em, 0, 0);
+    transform: translate3d(16.5em, 0, 0);
+    background: black;
 }
 
 body.menu--open:not(.light--version) .wrap__content {
-  -webkit-transform: translate3d(15em, 0, 0);
-  -moz-transform: translate3d(15em, 0, 0);
-  transform: translate3d(15em, 0, 0);
+  -webkit-transform: translate3d(16.5em, 0, 0);
+  -moz-transform: translate3d(16.5em, 0, 0);
+  transform: translate3d(16.5em, 0, 0);
 }
 
 body.menu--open:not(.light--version) .background {
   opacity: 0.5;
 }
-
+body.light--version .wrap__left::after {
+    content: none !important;
+    display: none !important;
+}
 body.light--version .wrap__left {
   visibility: visible;
 }
@@ -1330,8 +1368,38 @@ body.light--version .wrap__left {
     -moz-transform: translate3d(15em, 0, 0);
     transform: translate3d(15em, 0, 0);
   }
+    body.menu--open.light--version .wrap__left {
+        -webkit-transform: translate3d(16.5em, 0, 0) !important;
+        -moz-transform: translate3d(16.5em, 0, 0) !important;
+        transform: translate3d(16.5em, 0, 0) !important;
+        background: black !important; 
+    }
 }
 
+
+/* 2. Настройка для ПК (сдвиг ЗАПРЕЩЕН, меню просто стоит) */
+@media screen and (min-width: 768px) {
+  body.light--version .wrap__left,
+    body.light--version.menu--open .wrap__left {
+        visibility: visible !important;
+        margin-left: 0 !important;
+        
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        background: black !important;
+        transition: none !important; 
+    }
+    
+    body.light--version .wrap__content {
+        transform: none !important; 
+    }
+}
+
+/* 3. Эффект затухания выключен для лайт-версии везде */
+body.light--version .wrap__left::after {
+    content: none !important;
+    display: none !important;
+}
 @-webkit-keyframes logo-halloween-fire {
   0% {
     background: #FFEB3B;
@@ -14392,13 +14460,16 @@ body.system--keyboard .search-box .simple-keyboard-input {
 @keyframes errorFadeIn {
     0% {
         opacity: 0;
-        transform: translateX(-10px); /* Небольшой выезд слева направо */
+        transform: scale(0.7); /* Вырастает из центра */
+        filter: blur(5px);    /* Убираем резкость в начале */
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
+        filter: blur(0);
     }
 }
+
 
 .extensions__item-proto.protocol-http {
     animation: protoHttpFadeIn 0.9s forwards;
@@ -14407,11 +14478,30 @@ body.system--keyboard .search-box .simple-keyboard-input {
 @keyframes protoHttpFadeIn {
     0% {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: scale(0.7);
+        filter: blur(5px);
     }
     100% {
-        opacity: 0.3; 
-        transform: translateX(0);
+        opacity: 0.3;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.extensions__item-proto.protocol-https {
+    animation: protoHttpsFadeIn 0.9s forwards;
+}
+
+@keyframes protoHttpsFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
     }
 }
 
