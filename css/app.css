@@ -1,21 +1,43 @@
 @charset "UTF-8";
-.fixed-container {
+.loading-container {
     position: fixed;
-    left: 0;
-    top: 50%; /* По умолчанию по центру */
-    right: 0;
+    inset: 0;
     z-index: 101;
-    text-align: center;
-    padding-top: 6em;
-    padding-top: 13vh;
-    font-weight: 450;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -13.5em;
 }
 
-/* Медиазапрос для маленьких экранов */
+.lp-track {
+    width: 9.2em;
+    height: 0.19em;
+    background: rgba(255,255,255,0.12);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.lp-runner {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 35%;
+    background: rgba(255,255,255,0.9);
+    border-radius: 2px;
+    /* Используем transform вместо left для GPU ускорения */
+    animation: lp-run 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    will-change: transform; 
+}
+
+@keyframes lp-run {
+    0%   { transform: translateX(-150%); }
+    100% { transform: translateX(350%); }
+}
+
 @media (max-width: 480px) {
-    .fixed-container {
-        top: 48%; /* Смещаем выше */
-    }
+    .loading-container { bottom: -19.5em; }
+    .lp-track { width: 130px; }
 }
 
 .menu__item.selector[data-action="subscribes"] {
@@ -313,17 +335,34 @@ body {
   user-select: none !important;
   -webkit-touch-callout: none !important;
 }
-
+ /* черный стиль */
 body.black--style {
-  background: #000;
-}
+  background: #000000 ;
+} 
+body.black--style .selectbox__content,
+  body.black--style .wrap__left,
+  body.black--style .modal__content,
+  body.black--style .navigation-bar__body,
+  body.black--style .settings__content {
+    background-color: #000000  !important;
+  }
+
+  body.black--style .wrap__left::after{
+background: linear-gradient(to right, 
+        rgba(0,0,0,1) 0%,    
+        rgba(0,0,0,1) 25%,   
+        rgba(0,0,0,0) 100%  
+    );
+  }
 
 @media screen and (max-width: 480px) {
 
   body.black--style .selectbox__content,
+  body.black--style .wrap__left,
   body.black--style .modal__content,
+  body.black--style .navigation-bar__body,
   body.black--style .settings__content {
-    background-color: #000 !important;
+    background-color: #000000  !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1111,7 +1150,6 @@ body:not(.glass--style).keyboard-input--visible .head {
 }
 
 .navigation-bar__body {
-
   background: #000000;
   padding: 1.5em;
   display: -webkit-box;
@@ -1247,8 +1285,6 @@ body.true--mobile .wrap__left {
   z-index: 10;
 }
 .wrap__left {
-    /* Это критически важно: позволяем тени выходить за край, 
-       но при этом она остается частью этого же слоя отрисовки */
     overflow: visible !important;
 }
 .wrap__left {
@@ -1272,7 +1308,7 @@ body.true--mobile .wrap__left {
     content: "";
     position: absolute;
     top: 0;
-    right: -40px; 
+    right: -37px; 
     width: 40px; 
     height: 100%;
     background: linear-gradient(to right, 
@@ -1282,7 +1318,8 @@ body.true--mobile .wrap__left {
     );
     pointer-events: none;
     z-index: 5;
-}body.menu--open .wrap__left::after {
+}
+body.menu--open .wrap__left::after {
     opacity: 1;
 }
 
@@ -1343,6 +1380,7 @@ body.menu--open:not(.light--version) .wrap__left {
     -moz-transform: translate3d(16.5em, 0, 0);
     transform: translate3d(16.5em, 0, 0);
     background: black;
+    
 }
 
 body.menu--open:not(.light--version) .wrap__content {
@@ -1360,46 +1398,18 @@ body.light--version .wrap__left::after {
 }
 body.light--version .wrap__left {
   visibility: visible;
-}
-
-@media screen and (max-width: 767px) {
-  body.menu--open .wrap__left {
-    -webkit-transform: translate3d(15em, 0, 0);
-    -moz-transform: translate3d(15em, 0, 0);
-    transform: translate3d(15em, 0, 0);
-  }
-    body.menu--open.light--version .wrap__left {
-        -webkit-transform: translate3d(16.5em, 0, 0) !important;
-        -moz-transform: translate3d(16.5em, 0, 0) !important;
-        transform: translate3d(16.5em, 0, 0) !important;
-        background: black !important; 
-    }
+  margin-left: -16.5em;
+  transition: margin-left 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    -moz-transition: transform 0.2s, -moz-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
+    will-change: transform;
 }
 
 
-/* 2. Настройка для ПК (сдвиг ЗАПРЕЩЕН, меню просто стоит) */
-@media screen and (min-width: 768px) {
-  body.light--version .wrap__left,
-    body.light--version.menu--open .wrap__left {
-        visibility: visible !important;
-        margin-left: 0 !important;
-        
-        transform: translate3d(0, 0, 0) !important;
-        -webkit-transform: translate3d(0, 0, 0) !important;
-        background: black !important;
-        transition: none !important; 
-    }
-    
-    body.light--version .wrap__content {
-        transform: none !important; 
-    }
-}
-
-/* 3. Эффект затухания выключен для лайт-версии везде */
-body.light--version .wrap__left::after {
-    content: none !important;
-    display: none !important;
-}
 @-webkit-keyframes logo-halloween-fire {
   0% {
     background: #FFEB3B;
@@ -2315,18 +2325,19 @@ body.true--mobile.orientation--landscape .head .head__body {
 
 .menu {
   width: 100%;
+  padding-bottom: 2em;
 }
 
 .menu__split {
-  margin: 1em 1em;
-  width: 2.3em;
+  width: 80%;
+  margin: 1em auto;
   border-top: 2px solid rgba(255, 255, 255, 0.1);
-  margin-left: 1.7em;
 }
 
 .menu__list {
   margin: 0;
   padding-left: 0.6em;
+  padding-right: 0.6em;
 }
 
 .menu__item {
@@ -16604,13 +16615,51 @@ body.advanced--animation:not(.no--animation) .animate-up-content {
     animation: animation-down 0.3s !important;
   }
 }
+@media screen and (max-width: 767px) {
+  body.menu--open .wrap__left {
+    -webkit-transform: translate3d(15em, 0, 0);
+    -moz-transform: translate3d(15em, 0, 0);
+    transform: translate3d(15em, 0, 0);
+  }
+    body.menu--open.light--version .wrap__left {
+        -webkit-transform: translate3d(16.5em, 0, 0) !important;
+        -moz-transform: translate3d(16.5em, 0, 0) !important;
+        transform: translate3d(16.5em, 0, 0) !important;
+        background: black !important; 
+    }
+}
+
+@media screen and (min-width: 768px) {
+body.light--version .wrap__left {
+    margin-left: -16.5em !important;
+    transform: translate3d(0, 0, 0) !important;
+    background: transparent !important;
+    transition: margin-left 0.2s !important;
+  }
+  body.light--version.menu--open .wrap__left {
+    margin-left: 0 !important;
+    visibility: visible !important;
+  }
+  body.light--version.menu--open .wrap__content {
+    transform: translate3d(0, 0, 0) !important;
+    transition: transform 0.2s !important;
+  }
+  body.light--version .wrap__content {
+    transition: transform 0.2s !important;
+  }
+  
+}
+
+/* 3. Эффект затухания выключен для лайт-версии везде */
+body.light--version .wrap__left::after {
+    content: none !important;
+    display: none !important;
+}
 
 @media screen and (min-width: 767px) {
-  body.light--version .wrap__left {
-    position: static;
+ body.light--version .wrap__left {
+    position: relative;
     background: transparent;
-    margin-left: 0;
-    width: 13.5em;
   }
 
   body.light--version .background {
@@ -16723,7 +16772,9 @@ body.glass--style .settings-input--free,
 body.glass--style .navigation-bar__body,
 body.glass--style .discuss-rules,
 body.glass--style .bell__item {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(1.6em);
+          backdrop-filter: blur(1.6em);
 
 }
 
