@@ -17544,7 +17544,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 
 @media screen and (max-width: 480px) {
     .banner-dots-container {
-        bottom: 45px; 
+        padding-bottom: calc(3.3em + env(safe-area-inset-bottom)) !important; 
     }
 
 }
@@ -17641,7 +17641,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    padding-bottom: calc(13em + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(14em + env(safe-area-inset-bottom)) !important;
     box-sizing: border-box !important;
     position: relative !important;
 }
