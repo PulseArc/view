@@ -17296,26 +17296,61 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     }
     
     /* Контейнер баннера на весь экран */
-.selected-banner-row.is-mobile-banner {
-    width: 100vw !important;
-    /* как у Apple — min от высоты и пропорции */
-    height: min(90vh, 177.78vw) !important;
-    min-height: unset !important;
-    max-height: 100vh !important;
+.selected-banner-row.is-mobile-banner { 
     margin: 0 !important;
-    margin-left: -50vw !important;
     margin-right: -50vw !important;
     margin-bottom: -9em !important;
     left: 50% !important;
     right: 50% !important;
     padding: 0 !important;
-    padding-top: 44px !important; /* фиксированные px вместо em */
-    position: relative !important;
-    overflow: hidden !important;
     background: #000 !important;
     border-radius: 0 !important;
 }
+    /* 1. Основной контейнер (Section) */
+.selected-banner-row.is-mobile-banner {
+    --apple-aspect-ratio: 0.5625; /* 9:16 Portrait */
+    --banner-height: min(90vh, 177.78vw / var(--apple-aspect-ratio));
+    width: 100vw !important;
+    height: var(--banner-height) !important;
+    min-height: unset !important;
+    max-height: 90vh !important;
+    position: relative !important;
+    left: 50% !important;
+    margin-left: -50vw !important;
+    overflow: hidden !important;
+    padding-top: 44px !important;
+}
+
+/* 2. Вьюпорт и Слайды — Apple делает их "резиновыми" внутри родителя */
+.is-mobile-banner .banner-viewport,
+.is-mobile-banner .banner-slider-strip,
+.is-mobile-banner .banner-slide-unit {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
     
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Убираем любые JS-расчеты высоты */
+    min-height: 100% !important; 
+}
+
+
+/* 4. Текстовый контейнер (Container Dark) */
+.items-line:has(.selected-banner-row.is-mobile-banner) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.items-line:has(.selected-banner-row.is-mobile-banner) .items-line__body,
+.items-line:has(.selected-banner-row.is-mobile-banner) .scroll,
+.items-line:has(.selected-banner-row.is-mobile-banner) .scroll__content,
+.items-line:has(.selected-banner-row.is-mobile-banner) .scroll__body {
+    height: var(--banner-height) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
     /* Изображение постера на весь экран */
     .banner-fullscreen-img {
         width: 100vw !important;
@@ -17822,3 +17857,56 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 .search__input{
   display: none;
 }
+/* скорость слайда и убирает вспышки */
+.is-mobile-banner {
+    isolation: isolate;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Убираем лишние расчеты вне видимости */
+    contain: content; 
+}
+
+.is-mobile-banner .banner-slider-strip {
+    /* Идеальная кривая Apple: мгновенный старт и очень мягкая доводка */
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    
+    /* Сохраняем иерархию слоев при анимации */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}.is-mobile-banner .banner-slide-unit {
+    /* Важно для стабильности теней внутри */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.is-mobile-banner .shadow-overlay {
+    /* Принудительно фиксируем слой в 3D, чтобы не было микро-сдвигов */
+    -webkit-transform: translateZ(1px);
+    transform: translateZ(1px);
+    
+    /* Используем градиент без тяжелых фильтров для легкости */
+    background: linear-gradient(to top, 
+        #000 0%, 
+        rgba(0,0,0,0.9) 25%, 
+        rgba(0,0,0,0.4) 60%, 
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.is-mobile-banner .selected-banner__info {
+    /* Текст чуть выше тени */
+    -webkit-transform: translateZ(2px);
+    transform: translateZ(2px);
+}
+
+.is-mobile-banner .banner-fullscreen-img {
+    -webkit-transform: scale(1.15) translateZ(0);
+    transform: scale(1.15) translateZ(0);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+}
+/* Конец */
