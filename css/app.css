@@ -17584,27 +17584,6 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 
 }
 
-/* Специфично для Safari */
-
-
-
-/* Эффект Apple TV для мобильных устройств */
-.is-mobile-banner .banner-slide-unit::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20%; /* Высокая дымка */
-    z-index: 2; /* Поверх блюра */
-    pointer-events: none;
-    background: linear-gradient(to top, 
-        #000 0%,            /* Абсолютно черный низ */
-        rgba(0,0,0,0.8) 35%, /* Плотное затемнение */
-        rgba(0,0,0,0.4) 70%, /* Плавное исчезновение дымки */
-        transparent 100%
-    );
-}
 .is-mobile-banner .banner-slide-unit::after {
     content: '';
     position: absolute;
@@ -17653,15 +17632,16 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
  
 }
 .is-mobile-banner .banner-fullscreen-img {
-    /* Увеличиваем масштаб, чтобы обрезать края, где обычно пишут текст */
-    transform: scale(1.15); 
-    /* Смещаем картинку чуть вверх, чтобы текст снизу ушел в зону размытия */
-    object-position: center 10%; 
-    filter: brightness(0.9); /* Немного приглушаем яркость для премиального вида */
-    transition: transform 0.5s ease;
-    -webkit-transform: scale(1.15) translateZ(0);
-    transform: scale(1.15) translateZ(0);
-    will-change: transform;
+    width: 120% !important;
+    height: 120% !important;
+    
+    left: -0.1% !important;
+    object-fit: cover !important;
+    object-position: center 10% !important;
+    filter: brightness(0.9) !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    position: absolute !important;
 }
 
 /* Убеждаемся, что контейнер не выпускает увеличенную картинку за границы */
@@ -17754,40 +17734,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
         width: auto;
     }
 }
-.is-mobile-banner {
-    background-color: #000;
-    position: relative;
-    /* Запрещаем перетягивание в Safari */
-    touch-action: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-}
 
-.is-mobile-banner .banner-slide-unit {
-    position: relative;
-    overflow: hidden;
-    background-color: #000;
-   
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-.is-mobile-banner .banner-fullscreen-img {
-    -webkit-transform: scale(1.15) translateZ(0);
-    transform: scale(1.15) translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Запрещаем перетягивание картинки */
-    -webkit-user-drag: none;
-    user-select: none;
-    -webkit-user-select: none;
-    pointer-events: none;
-}
 
 .is-mobile-banner .shadow-overlay {
     position: absolute;
@@ -17814,21 +17761,8 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     perspective: 1000;
 }
 
-.is-mobile-banner .selected-banner__info {
-    z-index: 3;
-    position: relative;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
 
-.is-mobile-banner .banner-slider-strip {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-}
+
 
 .is-mobile-banner .selected-banner__genres {
     font-size: 1.1em;
@@ -17847,9 +17781,6 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     z-index: 4;
 }
 
-.is-mobile-banner .banner-slide-unit::before {
-    display: none !important;
-}
 
 .is-mobile-banner + * {
     background-color: #000;
@@ -17864,22 +17795,6 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     backface-visibility: hidden;
     /* Убираем лишние расчеты вне видимости */
     contain: content; 
-}
-
-.is-mobile-banner .banner-slider-strip {
-    /* Идеальная кривая Apple: мгновенный старт и очень мягкая доводка */
-    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
-    will-change: transform;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    
-    /* Сохраняем иерархию слоев при анимации */
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}.is-mobile-banner .banner-slide-unit {
-    /* Важно для стабильности теней внутри */
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
 }
 
 .is-mobile-banner .shadow-overlay {
@@ -17903,10 +17818,20 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
     transform: translateZ(2px);
 }
 
-.is-mobile-banner .banner-fullscreen-img {
-    -webkit-transform: scale(1.15) translateZ(0);
-    transform: scale(1.15) translateZ(0);
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
+.is-mobile-banner .shadow-overlay {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%; /* Высокая дымка */
+    z-index: 2; /* Поверх блюра */
+    pointer-events: none;
+    background: linear-gradient(to top, 
+        #000 0%,            /* Абсолютно черный низ */
+        rgba(0,0,0,0.8) 35%, /* Плотное затемнение */
+        rgba(0,0,0,0.4) 70%, /* Плавное исчезновение дымки */
+        transparent 100%
+    );
 }
 /* Конец */
