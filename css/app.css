@@ -56,7 +56,9 @@
 .true--mobile .head__action.open--favorite.icon--blink {
   display: none;
 }
-
+.head__action.open--feed.active {
+    opacity: 1 !important;
+}
 .true--mobile .head__action.open--feed {
   display: none;
 }
@@ -1926,7 +1928,13 @@ body.light--version .wrap__left {
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
+.head__actions .head__action {
+  margin-left: 2em !important;
+}
 
+body.true--mobile .head__actions .head__action {
+  margin-left: 0.3em !important;
+}
 .head__action.focus,
 .head__action.hover {
   background-color: #fff;
@@ -4660,8 +4668,23 @@ border-color: #fff;
 }
 
 .full-start__button.button--play {
-    background: #fff;
+    background: #2a2a2a;
+  color: #fff;
+  border: none;
+}
+.full-start__button.button--play.focus {
+    background: white;
   color: #000;
+  border: none;
+}
+body.true--mobile .full-start__button.button--play {
+    background: #ffffff;
+  color: #000000;
+  border: none;
+}
+body.true--mobile .full-start__button.button--play.focus {
+    background: #ffffff;
+  color: #000000;
   border: none;
 }
 .full-start__button.button--play span {
@@ -5207,7 +5230,16 @@ body.card--no-cover .full-start__background {
   -ms-flex-align: center;
   align-items: center;
 }
-
+.full-start-new__buttons .full-start__button,
+.buttons--container .full-start__button {
+  margin-right: 0.75em !important;
+  padding: 8px 27px !important;
+}
+body.true--mobile .full-start-new__buttons .full-start__button,
+body.true--mobile .buttons--container .full-start__button {
+  margin-right: 0.75em !important;
+  padding: 4px 15px !important;
+}
 @media screen and (max-width: 580px) {
   .full-start-new__buttons {
     overflow: auto;
@@ -16420,7 +16452,15 @@ body.touch-device .full-start__buttons-scroll .scroll__body .full-start__buttons
     opacity: 0;
   }
 }
-
+body.advanced--animation:not(.no--animation) .selected-banner__btn.animate-trigger-enter,
+body.advanced--animation:not(.no--animation) .selected-banner__btn-plus.animate-trigger-enter,
+body.advanced--animation:not(.no--animation) .selected-banner__btn.focus,
+body.advanced--animation:not(.no--animation) .selected-banner__btn-plus.focus {
+  -webkit-animation: animation-trigger-enter 0.2s forwards;
+  -moz-animation: animation-trigger-enter 0.2s forwards;
+  -o-animation: animation-trigger-enter 0.2s forwards;
+  animation: animation-trigger-enter 0.2s forwards;
+}
 body.advanced--animation:not(.no--animation) .card:not(.card--wide).focus .card__view,
 body.advanced--animation:not(.no--animation) .card:not(.card--wide).hover .card__view {
   -webkit-animation: animation-card-focus 0.2s;
@@ -16997,13 +17037,15 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 .selected-banner-row {
     width: 96%;
     height: 38em;
-    margin: 0.5em 2em 2em;
-    background: #1a1a1a;
+    margin: 0.5em 2% 2em;
     position: relative;
     border-radius: 1.2em;
     overflow: hidden;
     display: block !important;
+ margin-top: -5em !important; 
+    padding-top: 5em !important;
 }
+
 .selected-banner-row::after {
     content: '';
     position: absolute;
@@ -17077,23 +17119,9 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 }
 
 /* Кнопка "Подробнее" */
-.selected-banner__btn {
-    display: inline-block;
-    padding: 1.2em 2.8em;
-    background: #fff;
-    color: #000;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 1em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
 
-.selected-banner__btn.focus {
-    transform: scale(1.1);
-    background: #fff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
+
+
 
 /* Адаптация для мобильных устройств (< 767px) */
 @media screen and (max-width: 767px) {
@@ -17118,19 +17146,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 }
 
 
-/* Настройка баннера */
-.selected-banner-row {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    background-color: #000;
-    display: block !important;
-    
-    /* Сдвигаем баннер под Head */
-    /* Обычно высота шапки в Lampa около 5em - 7em */
-    margin-top: -5em !important; 
-    padding-top: 5em !important; /* Компенсируем отступ внутри, чтобы текст не залез под кнопки шапки */
-}
+
 
 /* ТВ И БОЛЬШИЕ ЭКРАНЫ */
 @media screen and (min-width: 768px) {
@@ -17149,17 +17165,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 }
 
 
-/*  *//* Основной контейнер баннера */
-.selected-banner-row {
-    width: 96%;
-    height: 38em;
-    margin: 0.5em 2% 2em;
-   
-    position: relative;
-    border-radius: 1.2em;
-    overflow: hidden;
-    display: block !important;
-}
+
 
 /* Фон баннера */
 .selected-banner__bg {
@@ -17237,21 +17243,121 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 .selected-banner__btn {
     display: inline-block;
     padding: 1.2em 2.8em;
-    background: #fff;
-    color: #000;
+    
+    color: #fff;
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 1em;
     cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    animation: none;
+    transform: none;
 }
-
+.selected-banner__btn {
+    background: #2a2a2a;
+    color: #fff;
+}
 .selected-banner__btn.focus {
-    transform: scale(1.1);
-    background: #fff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 1);
+    color: #000;
+}
+.is-mobile-banner .selected-banner__btn {
+   background: rgba(255, 255, 255, 1);
+     color: #000;
+}
+.selected-banner__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75em !important;
 }
 
+
+/* Кнопка-плюс (круг) */
+.selected-banner__btn-plus {
+    position: relative;
+    width: 3.8em; /* Оптимальный размер Apple TV */
+    height: 3.8em;
+    border-radius: 50%;
+    border: none;
+    /* Убедимся, что фон темный по умолчанию */
+    background: #2a2a2a !important; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    z-index: 5;
+    /* Устанавливаем цвет текста/иконки - белый по умолчанию */
+    color: rgba(255, 255, 255, 0.9); 
+    outline: none;
+    overflow: hidden; /* Важно, чтобы ::before не вылезал */
+}
+.selected-banner__btn.silent-focus,
+.selected-banner__btn.silent-focus.animate-trigger-enter {
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    transform: none !important;
+}
+/* SVG внутри кнопки */
+.selected-banner__btn-plus svg {
+    width: 1.1em; /* Размер иконки, подстройте под себя */
+    height: 1.1em;
+    
+    /* ВОТ ТУТ ИСПРАВЛЕНИЕ: МЕНЯЕМ STROKE НА FILL */
+    fill: currentColor !important; /* Берет цвет из свойства color родителя */
+    stroke: none !important;      /* Убираем контур */
+    
+    pointer-events: none; /* Чтобы курсор не пропадал */
+    transition: fill 0.2s ease;
+}
+
+/* Состояние при наведении (мышь) ИЛИ фокусе (пульт) */
+.selected-banner__btn-plus:hover,
+.selected-banner__btn-plus.focus {
+    
+    /* Фон становится белым */
+    background: #ffffff !important; 
+    /* Иконка становится темной (через currentColor) */
+    color: rgb(0 0 0 / 100%) !important
+    
+}
+.is-mobile-banner .selected-banner__btn-plus.focus  {
+   background: #2a2a2a !important;
+     color: #fff !important;
+}
+.true--mobile .selected-banner__btn {
+    background: #fff !important; 
+    color: #000 !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.true--mobile .selected-banner__btn-plus {
+    background: #2a2a2a !important;
+    color: #fff !important;
+    outline: none !important;
+    border: none !important;
+}
+
+
+.true--mobile .selected-banner__btn.focus {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    transform: none !important; 
+}
+.true--mobile .selected-banner__btn-plus.focus {
+  background: #2a2a2a !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transform: none !important; 
+}
 /* Адаптация для мобильных устройств (< 767px) */
 @media screen and (max-width: 767px) {
   
@@ -17701,8 +17807,7 @@ body.glass--style.platform--apple .card-watched__item:nth-child(5) {
 }
 
 /* Кнопка "Подробнее" */
-.is-mobile-banner .selected-banner__btn {
-    margin: 0 auto;
+.is-mobile-banner .selected-banner__btn { 
     padding: 1em 3.5em; /* Делаем кнопку чуть шире и солиднее */
     transform: none; /* Убираем возможные смещения */
 }
