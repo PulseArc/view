@@ -70,6 +70,9 @@
 .ad-bot {
   display: none;
 }
+.gmtlop-promo{
+  display: none !important;
+}
 
 .head__action.selector.full-screen {
   display: none;
@@ -11440,6 +11443,7 @@ body.platform--netcast .torrent-item__ffprobe>div::before {
   -moz-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: default
 }
 
 .feed-head__icon {
